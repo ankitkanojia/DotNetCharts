@@ -160,13 +160,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Fusionchart\css\site.css" />
     <Content Include="Content\Fusionchart\css\site.min.css" />
-    <Content Include="Content\Fusionchart\favicon.ico" />
     <Content Include="Content\Fusionchart\images\banner1.svg" />
     <Content Include="Content\Fusionchart\images\banner2.svg" />
     <Content Include="Content\Fusionchart\images\banner3.svg" />
@@ -211,11 +206,7 @@
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.js" />
     <Content Include="Content\Fusionchart\lib\jquery\LICENSE.txt" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Fusionchart\lib\bootstrap\.bower.json" />
     <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
     <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
@@ -231,39 +222,6 @@
     <Content Include="Content\Fusionchart\lib\jquery-validation\LICENSE.md" />
     <Content Include="Content\Fusionchart\lib\jquery\.bower.json" />
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.map" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.charts.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.excelexport.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.gantt.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.maps.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedbar2d.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedcolumn2d.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.powercharts.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.timeseries.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.treemap.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.vml.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.widgets.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.zoomline.js" />
-    <Content Include="Scripts\FusionCharts\fusioncharts.zoomscatter.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.candy.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.carbon.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fint.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fusion.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.gammel.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.ocean.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.umber.js" />
-    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.zune.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -282,17 +240,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
