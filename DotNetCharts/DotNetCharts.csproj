@@ -45,7 +45,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FusionCharts.DataEngine, Version=1.0.1.0, Culture=neutral, PublicKeyToken=e6b8110d59760a80, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.DataEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Converters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Converters.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Core, Version=0.3.1.29789, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Css, Version=0.3.1.29790, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Dom, Version=0.3.1.29789, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Model, Version=0.3.1.29790, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Rendering.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Runtime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.SharpVectors.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.Visualization, Version=1.0.1.0, Culture=neutral, PublicKeyToken=e6b8110d59760a80, processorArchitecture=MSIL">
+      <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.Visualization.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -99,9 +129,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -137,13 +164,96 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Fusionchart\css\site.css" />
+    <Content Include="Content\Fusionchart\css\site.min.css" />
+    <Content Include="Content\Fusionchart\favicon.ico" />
+    <Content Include="Content\Fusionchart\images\banner1.svg" />
+    <Content Include="Content\Fusionchart\images\banner2.svg" />
+    <Content Include="Content\Fusionchart\images\banner3.svg" />
+    <Content Include="Content\Fusionchart\js\site.js" />
+    <Content Include="Content\Fusionchart\js\site.min.js" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.charts.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.gantt.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.maps.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.overlappedbar2d.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.overlappedcolumn2d.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.powercharts.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.timeseries.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.treemap.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.vml.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.widgets.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.zoomline.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\fusioncharts.zoomscatter.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.candy.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.fint.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.fusion.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.gammel.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="Content\Fusionchart\lib\FusionCharts\themes\fusioncharts.theme.zune.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.js" />
+    <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Content\Fusionchart\lib\jquery\LICENSE.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\.bower.json" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Fusionchart\lib\bootstrap\LICENSE" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation-unobtrusive\.bower.json" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\.bower.json" />
+    <Content Include="Content\Fusionchart\lib\jquery-validation\LICENSE.md" />
+    <Content Include="Content\Fusionchart\lib\jquery\.bower.json" />
+    <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.charts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.excelexport.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.gantt.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.maps.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedbar2d.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedcolumn2d.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.powercharts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.timeseries.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.treemap.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.vml.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.widgets.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.zoomline.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.zoomscatter.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.candy.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fint.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fusion.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.gammel.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.umber.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.zune.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -165,8 +275,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
