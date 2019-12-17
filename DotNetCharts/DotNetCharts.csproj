@@ -157,6 +157,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\amChartsController.cs" />
     <Compile Include="Controllers\CanvasJsChartController.cs" />
     <Compile Include="Controllers\FusionChartController.cs" />
     <Compile Include="Controllers\HighChartController.cs" />
@@ -284,6 +285,7 @@
     <Content Include="Views\HighChart\Index.cshtml" />
     <Content Include="Views\FusionChart\Index.cshtml" />
     <Content Include="Views\CanvasJsChart\Index.cshtml" />
+    <Content Include="Views\amCharts\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
