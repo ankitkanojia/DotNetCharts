@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\amChartsController.cs" />
     <Compile Include="Controllers\CanvasJsChartController.cs" />
+    <Compile Include="Controllers\d3ChartController.cs" />
     <Compile Include="Controllers\FusionChartController.cs" />
     <Compile Include="Controllers\HighChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\d3chart\d3.js" />
     <Content Include="Content\Fusionchart\css\site.css" />
     <Content Include="Content\Fusionchart\css\site.min.css" />
     <Content Include="Content\Fusionchart\images\banner1.svg" />
@@ -286,6 +288,7 @@
     <Content Include="Views\FusionChart\Index.cshtml" />
     <Content Include="Views\CanvasJsChart\Index.cshtml" />
     <Content Include="Views\amCharts\Index.cshtml" />
+    <Content Include="Views\d3Chart\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

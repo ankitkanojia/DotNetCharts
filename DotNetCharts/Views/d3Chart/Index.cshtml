@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title - </h1>
+            </hgroup>
+
+        </div>
+    </section>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="~/Content/d3chart/d3.js" charset="utf-8"></script>
+<style type="text/css">
+    #chart text {
+        fill: black;
+        font: 10px sans-serif;
+        text-anchor: end;
+    }
+
+    .axis text {
+        font: 10px sans-serif;
+    }
+
+    .axis path, .axis line {
+        fill: none;
+        stroke: #fff;
+        shape-rendering: crispEdges;
+    }
+
+    body {
+        background: #1a1a1a;
+        color: #eaeaea;
+        padding: 10px;
+    }
+
+    path {
+        stroke: steelblue;
+        stroke-width: 2;
+        fill: none;
+    }
+</style>
+<div id="chart"></div>
+<script type="text/javascript">
+    var salesData;
+
+    $(document).ready(function () {
+        Plot();
+    });
+
+    function Plot() {
+        var yearData;
+        var salesData;
+
+        var data =
+            [
+                { 'Year': '2012', 'Sale': 2000 },
+                { 'Year': '2014', 'Sale': 3000 },
+                { 'Year': '2015', 'Sale': 5000 }
+            ]
+
+        yearData = GetYears(data)
+        salesData = GetSales(data)
+
+        var margin = { top: 20, right: 30, bottom: 30, left: 40 },
+            width = 1000 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var chart = d3.select("#chart")
+            .append("svg")  //append svg element inside #chart
+            .attr("width", width + (2 * margin.left) + margin.right)    //set width
+            .attr("height", height + margin.top + margin.bottom);  //set height
+
+
+        var x = d3.scale.ordinal().domain(yearData).rangePoints([margin.left, width]);
+        var y = d3.scale.linear().domain(salesData).range([height, 0]);
+
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom").ticks(data.Year);  //orient bottom because x-axis will appear below the bars
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left").ticks(10);
+
+        // Define the line
+        var valueline = d3.svg.line()
+            .x(function (d) { return x(d.Year); })
+            .y(function (d) { return y(d.Sale); });
+
+
+        chart.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        chart.append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(" + margin.left + ",0)")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Sales Data");
+
+        // Add the valueline path.
+        chart.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(data));
+
+
+    }
+
+
+    function GetYears(data) {
+        var result = [];
+        for (var i in data)
+            result.push(data[i].Year);
+
+        return result;
+    }
+
+    function GetSales(data) {
+        var result = [];
+        var max = 0.0;
+        result.push(max);
+        for (var i in data) {
+            if (max < data[i].Sale) {
+                max = data[i].Sale
+            }
+        }
+        result.push(max + 50);
+
+        return result;
+    }
+
+
+</script>
