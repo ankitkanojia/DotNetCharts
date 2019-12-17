@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>Index</title>
+</head>
+<body>
+    <div id="chartContainer"></div>
+
+    <script type="text/javascript">
+
+    		window.onload = function () {
+    			var chart = new CanvasJS.Chart("chartContainer", {
+    				theme: "light2",
+    				animationEnabled: true,
+    				title: {
+    					text: "Simple Column Chart in ASP.NET MVC"
+    				},
+    				subtitles: [
+    					{ text: "Try Resizing the Browser" }
+    				],
+    				data: [
+    				{
+    					type: "column", //change type to bar, line, area, pie, etc
+    					dataPoints: [
+    					{ x: 10, y: 71 },
+    					{ x: 20, y: 55 },
+    					{ x: 30, y: 50 },
+    					{ x: 40, y: 65 },
+    					{ x: 50, y: 95 },
+    					{ x: 60, y: 68 },
+    					{ x: 70, y: 28 },
+    					{ x: 80, y: 34 },
+    					{ x: 90, y: 14 }
+    					]
+                                            //Uncomment below line to add data coming from the controller.
+    					//dataPoints: @Html.Raw(ViewBag.DataPoints),
+    				}
+    				]
+    			});
+    			chart.render();
+    		};
+    </script>
+
+</body>
+</html>
+

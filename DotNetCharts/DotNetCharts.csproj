@@ -82,6 +82,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,6 +157,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CanvasJsChartController.cs" />
     <Compile Include="Controllers\FusionChartController.cs" />
     <Compile Include="Controllers\HighChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -281,6 +283,7 @@
     <None Include="packages.config" />
     <Content Include="Views\HighChart\Index.cshtml" />
     <Content Include="Views\FusionChart\Index.cshtml" />
+    <Content Include="Views\CanvasJsChart\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
