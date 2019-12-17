@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNet.Highcharts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=88854f873df851bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
+    </Reference>
     <Reference Include="FusionCharts.DataEngine, Version=1.0.1.0, Culture=neutral, PublicKeyToken=e6b8110d59760a80, processorArchitecture=MSIL">
       <HintPath>..\packages\FusionCharts.Visualization.1.0.7\lib\net45\FusionCharts.DataEngine.dll</HintPath>
     </Reference>
@@ -153,6 +156,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HighChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +226,39 @@
     <Content Include="Content\Fusionchart\lib\jquery-validation\LICENSE.md" />
     <Content Include="Content\Fusionchart\lib\jquery\.bower.json" />
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.map" />
+    <Content Include="Content\Highcharts\js\adapters\standalone-framework.js" />
+    <Content Include="Content\Highcharts\js\adapters\standalone-framework.src.js" />
+    <Content Include="Content\Highcharts\js\highcharts-3d.js" />
+    <Content Include="Content\Highcharts\js\highcharts-3d.src.js" />
+    <Content Include="Content\Highcharts\js\highcharts-all.js" />
+    <Content Include="Content\Highcharts\js\highcharts-more.js" />
+    <Content Include="Content\Highcharts\js\highcharts-more.src.js" />
+    <Content Include="Content\Highcharts\js\highcharts.js" />
+    <Content Include="Content\Highcharts\js\highcharts.src.js" />
+    <Content Include="Content\Highcharts\js\modules\canvas-tools.js" />
+    <Content Include="Content\Highcharts\js\modules\canvas-tools.src.js" />
+    <Content Include="Content\Highcharts\js\modules\data.js" />
+    <Content Include="Content\Highcharts\js\modules\data.src.js" />
+    <Content Include="Content\Highcharts\js\modules\drilldown.js" />
+    <Content Include="Content\Highcharts\js\modules\drilldown.src.js" />
+    <Content Include="Content\Highcharts\js\modules\exporting.js" />
+    <Content Include="Content\Highcharts\js\modules\exporting.src.js" />
+    <Content Include="Content\Highcharts\js\modules\funnel.js" />
+    <Content Include="Content\Highcharts\js\modules\funnel.src.js" />
+    <Content Include="Content\Highcharts\js\modules\heatmap.js" />
+    <Content Include="Content\Highcharts\js\modules\heatmap.src.js" />
+    <Content Include="Content\Highcharts\js\modules\no-data-to-display.js" />
+    <Content Include="Content\Highcharts\js\modules\no-data-to-display.src.js" />
+    <Content Include="Content\Highcharts\js\modules\solid-gauge.js" />
+    <Content Include="Content\Highcharts\js\modules\solid-gauge.src.js" />
+    <Content Include="Content\Highcharts\js\themes\dark-blue.js" />
+    <Content Include="Content\Highcharts\js\themes\dark-green.js" />
+    <Content Include="Content\Highcharts\js\themes\dark-unica.js" />
+    <Content Include="Content\Highcharts\js\themes\gray.js" />
+    <Content Include="Content\Highcharts\js\themes\grid-light.js" />
+    <Content Include="Content\Highcharts\js\themes\grid.js" />
+    <Content Include="Content\Highcharts\js\themes\sand-signika.js" />
+    <Content Include="Content\Highcharts\js\themes\skies.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\HighChart\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
