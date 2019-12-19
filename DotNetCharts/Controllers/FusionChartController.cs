@@ -13,6 +13,11 @@ namespace DotNetCharts.Controllers
     {
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult BarChart()
+        {
             DataTable ChartData = new DataTable();
             ChartData.Columns.Add("Programming Language", typeof(System.String));
             ChartData.Columns.Add("Users", typeof(System.Double));
