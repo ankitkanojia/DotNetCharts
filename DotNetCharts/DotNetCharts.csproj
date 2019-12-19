@@ -290,6 +290,7 @@
     <Content Include="Views\amCharts\Index.cshtml" />
     <Content Include="Views\d3Chart\Index.cshtml" />
     <Content Include="Views\FusionChart\BarChart.cshtml" />
+    <Content Include="Views\HighChart\ColumnChart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

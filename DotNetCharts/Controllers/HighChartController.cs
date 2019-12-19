@@ -13,8 +13,12 @@ namespace DotNetCharts.Controllers
 {
     public class HighChartController : Controller
     {
-        // GET: HighChart
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult ColumnChart()
         {
             Highcharts columnChart = new Highcharts("columnchart");
 
