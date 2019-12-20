@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "ColumnChart";
+}
+<html>
+<head>
+    <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/FusionCharts.js")"></script>
+    <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
+</head>
+<body>
+    <div>
+        <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+    </div>
+</body>
+</html>
