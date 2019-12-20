@@ -9,6 +9,7 @@ namespace DotNetCharts.Controllers
     {
         public ActionResult Index()
         {
+            //Library Link : https://www.fusioncharts.com/charts/column-bar-charts/
             return View();
         }
 
