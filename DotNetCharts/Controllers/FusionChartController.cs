@@ -217,5 +217,39 @@ namespace DotNetCharts.Controllers
             //Return the view
             return View();
         }
+
+        public ActionResult CombinedChart()
+        {
+            // This page demonstrates the ease of generating charts using FusionCharts.
+            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
+            // Ideally, you would NOT use a physical data file. Instead you'll have
+            // your own ASP.NET scripts virtually relay the XML data document.
+            // FusionCharts supports various data format, please comment the code for
+            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
+            // For a head-start, we've kept this example very simple.
+
+            // Create the chart - mscombi2d Chart with data from Data/Data.xml
+            Chart sales = new Chart();
+
+            // Setting chart id
+            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
+
+            // Setting chart type to mscombi2d chart
+            sales.SetChartParameter(Chart.ChartParameter.chartType, "mscombi2d");
+
+            // Setting chart width to 600px
+            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
+
+            // Setting chart height to 350px
+            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
+
+            // Setting chart data as JSON String (Uncomment below line
+            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Expense Analysis\",\n    \"subcaption\": \"ACME Inc.\",\n    \"xaxisname\": \"Region\",\n    \"yaxisname\": \"Amount (In USD)\",\n    \"numberprefix\": \"$\",\n    \"exportenabled\": \"1\",\n    \"theme\": \"fusion\"\n  },\n  \"categories\": [\n    {\n      \"category\": [\n        {\n          \"label\": \"East\"\n        },\n        {\n          \"label\": \"West\"\n        },\n        {\n          \"label\": \"South\"\n        },\n        {\n          \"label\": \"North\"\n        }\n      ]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"seriesname\": \"Actual Expenses\",\n      \"data\": [\n        {\n          \"value\": \"1441290\"\n        },\n        {\n          \"value\": \"855912\"\n        },\n        {\n          \"value\": \"911404\"\n        },\n        {\n          \"value\": \"648136\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Budgeted Expenses\",\n      \"renderas\": \"line\",\n      \"data\": [\n        {\n          \"value\": \"1297430\"\n        },\n        {\n          \"value\": \"776485\"\n        },\n        {\n          \"value\": \"685352\"\n        },\n        {\n          \"value\": \"726791\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Unknown liabilities\",\n      \"renderas\": \"area\",\n      \"showanchors\": \"0\",\n      \"data\": [\n        {\n          \"value\": \"143860\"\n        },\n        {\n          \"value\": \"79427\"\n        },\n        {\n          \"value\": \"226052\"\n        },\n        {\n          \"value\": \"78655\"\n        }\n      ]\n    }\n  ]\n}", Chart.DataFormat.json);
+
+            ViewData["Chart"] = sales.Render();
+
+            //Return the View
+            return View();
+        }
     }
 }
