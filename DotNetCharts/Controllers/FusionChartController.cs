@@ -115,5 +115,39 @@ namespace DotNetCharts.Controllers
             // Return the view
             return View();
         }
+
+        public ActionResult PieChart()
+        {
+            // This page demonstrates the ease of generating charts using FusionCharts.
+            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
+            // Ideally, you would NOT use a physical data file. Instead you'll have
+            // your own ASP.NET scripts virtually relay the XML data document.
+            // FusionCharts supports various data format, please comment the code for
+            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
+            // For a head-start, we've kept this example very simple.
+
+            // Create the chart - pie3d Chart with data from Data/Data.xml
+            Chart sales = new Chart();
+
+            // Setting chart id
+            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
+
+            // Setting chart type to pie3d chart
+            sales.SetChartParameter(Chart.ChartParameter.chartType, "pie3d");
+
+            // Setting chart width to 600px
+            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
+
+            // Setting chart height to 350px
+            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
+
+            // Setting chart data as JSON String (Uncomment below line
+            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Recommended Portfolio Split\",\n    \"subcaption\": \"For a net-worth of $1M\",\n    \"showvalues\": \"1\",\n    \"showpercentintooltip\": \"0\",\n    \"numberprefix\": \"$\",\n    \"enablemultislicing\": \"1\",\n    \"theme\": \"fusion\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Equity\",\n      \"value\": \"300000\"\n    },\n    {\n      \"label\": \"Debt\",\n      \"value\": \"230000\"\n    },\n    {\n      \"label\": \"Bullion\",\n      \"value\": \"180000\"\n    },\n    {\n      \"label\": \"Real-estate\",\n      \"value\": \"270000\"\n    },\n    {\n      \"label\": \"Insurance\",\n      \"value\": \"20000\"\n    }\n  ]\n}", Chart.DataFormat.json);
+
+            ViewData["Chart"] = sales.Render();
+
+            //Return the view
+            return View();
+        }
     }
 }
