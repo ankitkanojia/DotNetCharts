@@ -149,5 +149,39 @@ namespace DotNetCharts.Controllers
             //Return the view
             return View();
         }
+
+        public ActionResult DonutChart()
+        {
+            // This page demonstrates the ease of generating charts using FusionCharts.
+            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
+            // Ideally, you would NOT use a physical data file. Instead you'll have
+            // your own ASP.NET scripts virtually relay the XML data document.
+            // FusionCharts supports various data format, please comment the code for
+            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
+            // For a head-start, we've kept this example very simple.
+
+            // Create the chart - doughnut3d Chart with data from Data/Data.xml
+            Chart sales = new Chart();
+
+            // Setting chart id
+            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
+
+            // Setting chart type to doughnut3d chart
+            sales.SetChartParameter(Chart.ChartParameter.chartType, "doughnut3d");
+
+            // Setting chart width to 600px
+            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
+
+            // Setting chart height to 350px
+            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
+
+            // Setting chart data as JSON String (Uncomment below line
+            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Top 5 countries with Global Oil Reserves\",\n    \"subcaption\": \"MMbbl= One Million barrels\",\n    \"enablesmartlabels\": \"1\",\n    \"showlabels\": \"1\",\n    \"numbersuffix\": \" MMbbl\",\n    \"usedataplotcolorforlabels\": \"1\",\n    \"plottooltext\": \"$label, <b>$value</b> MMbbl\",\n    \"theme\": \"fusion\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Venezuela\",\n      \"value\": \"290\"\n    },\n    {\n      \"label\": \"Saudi\",\n      \"value\": \"260\"\n    },\n    {\n      \"label\": \"Canada\",\n      \"value\": \"180\"\n    },\n    {\n      \"label\": \"Iran\",\n      \"value\": \"140\"\n    },\n    {\n      \"label\": \"Russia\",\n      \"value\": \"115\"\n    }\n  ]\n}", Chart.DataFormat.json);
+
+            ViewData["Chart"] = sales.Render();
+
+            //Return the view
+            return View();
+        }
     }
 }
