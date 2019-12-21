@@ -301,6 +301,7 @@
     <Content Include="Views\FusionChart\LineChart.cshtml" />
     <Content Include="Views\FusionChart\PieChart.cshtml" />
     <Content Include="Views\FusionChart\DonutChart.cshtml" />
+    <Content Include="Views\FusionChart\StackedChart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
