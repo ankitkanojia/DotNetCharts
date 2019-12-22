@@ -7,9 +7,10 @@ namespace DotNetCharts.Controllers
 {
     public class FusionChartController : Controller
     {
+        //Library Link : https://www.fusioncharts.com/charts/column-bar-charts/
+
         public ActionResult Index()
         {
-            //Library Link : https://www.fusioncharts.com/charts/column-bar-charts/
             return View();
         }
 
@@ -249,6 +250,40 @@ namespace DotNetCharts.Controllers
             ViewData["Chart"] = sales.Render();
 
             //Return the View
+            return View();
+        }
+
+        public ActionResult BubbleChart()
+        {
+            // This page demonstrates the ease of generating charts using FusionCharts.
+            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
+            // Ideally, you would NOT use a physical data file. Instead you'll have
+            // your own ASP.NET scripts virtually relay the XML data document.
+            // FusionCharts supports various data format, please comment the code for
+            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
+            // For a head-start, we've kept this example very simple.
+
+            // Create the chart - bubble Chart with data from Data/Data.xml
+            Chart sales = new Chart();
+
+            // Setting chart id
+            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
+
+            // Setting chart type to bubble chart
+            sales.SetChartParameter(Chart.ChartParameter.chartType, "bubble");
+
+            // Setting chart width to 600px
+            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
+
+            // Setting chart height to 350px
+            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
+
+            // Setting chart data as JSON String (Uncomment below line
+            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"AdWords Campaign Analysis\",\n    \"subcaption\": \"Conversions as % of total\",\n    \"xaxisname\": \"# Conversions\",\n    \"yaxisname\": \"Cost Per Conversion\",\n    \"numberprefix\": \"$\",\n    \"theme\": \"fusion\",\n    \"plottooltext\": \"$name : Share of total conversion: $zvalue%\"\n  },\n  \"categories\": [\n    {\n      \"verticallinealpha\": \"20\",\n      \"category\": [\n        {\n          \"label\": \"0\",\n          \"x\": \"0\"\n        },\n        {\n          \"label\": \"1500\",\n          \"x\": \"1500\",\n          \"showverticalline\": \"1\"\n        },\n        {\n          \"label\": \"3000\",\n          \"x\": \"3000\",\n          \"showverticalline\": \"1\"\n        },\n        {\n          \"label\": \"4500\",\n          \"x\": \"4500\",\n          \"showverticalline\": \"1\"\n        },\n        {\n          \"label\": \"6000\",\n          \"x\": \"6000\",\n          \"showverticalline\": \"1\"\n        }\n      ]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"data\": [\n        {\n          \"x\": \"5540\",\n          \"y\": \"16.09\",\n          \"z\": \"30.63\",\n          \"name\": \"Campaign 1\"\n        },\n        {\n          \"x\": \"4406\",\n          \"y\": \"12.74\",\n          \"z\": \"24.36\",\n          \"name\": \"Campaign 2\"\n        },\n        {\n          \"x\": \"1079\",\n          \"y\": \"15.79\",\n          \"z\": \"5.97\",\n          \"name\": \"Campaign 3\"\n        },\n        {\n          \"x\": \"1700\",\n          \"y\": \"8.27\",\n          \"z\": \"9.4\",\n          \"name\": \"Campaign 4\"\n        },\n        {\n          \"x\": \"853\",\n          \"y\": \"15.89\",\n          \"z\": \"4.71\",\n          \"name\": \"Campaign 5\"\n        },\n        {\n          \"x\": \"1202\",\n          \"y\": \"10.74\",\n          \"z\": \"6.65\",\n          \"name\": \"Campaign 6\"\n        },\n        {\n          \"x\": \"2018\",\n          \"y\": \"6.14\",\n          \"z\": \"11.16\",\n          \"name\": \"Campaign 7\"\n        },\n        {\n          \"x\": \"413\",\n          \"y\": \"19.83\",\n          \"z\": \"2.28\",\n          \"name\": \"Campaign 8\"\n        },\n        {\n          \"x\": \"586\",\n          \"y\": \"13.96\",\n          \"z\": \"3.24\",\n          \"name\": \"Campaign 9\"\n        },\n        {\n          \"x\": \"184\",\n          \"y\": \"15.82\",\n          \"z\": \"1.02\",\n          \"name\": \"Campaign 10\"\n        },\n        {\n          \"x\": \"311\",\n          \"y\": \"5.83\",\n          \"z\": \"1.72\",\n          \"name\": \"Campaign 11\"\n        },\n        {\n          \"x\": \"35\",\n          \"y\": \"10.76\",\n          \"z\": \"0.19\",\n          \"name\": \"Campaign 12\"\n        },\n        {\n          \"x\": \"55\",\n          \"y\": \"2.73\",\n          \"z\": \"0.3\",\n          \"name\": \"Campaign 13\"\n        },\n        {\n          \"x\": \"6\",\n          \"y\": \"21.22\",\n          \"z\": \"0.03\",\n          \"name\": \"Campaign 14\"\n        }\n      ]\n    }\n  ]\n}", Chart.DataFormat.json);
+
+            ViewData["Chart"] = sales.Render();
+
+            //Return the view
             return View();
         }
     }
