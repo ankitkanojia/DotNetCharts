@@ -304,6 +304,7 @@
     <Content Include="Views\FusionChart\StackedChart.cshtml" />
     <Content Include="Views\FusionChart\CombinedChart.cshtml" />
     <Content Include="Views\FusionChart\BubbleChart.cshtml" />
+    <Content Include="Views\FusionChart\MarketShareChart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
