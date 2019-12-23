@@ -1,0 +1,7 @@
+﻿.githubribbon {
+    position: fixed;
+    right: 0;
+    z-index: 99999999;
+    height: 149px;
+    top: 0;
+}
