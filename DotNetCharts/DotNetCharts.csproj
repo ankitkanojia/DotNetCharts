@@ -228,6 +228,7 @@
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.js" />
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.js" />
     <Content Include="Content\Fusionchart\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\TreeView\TreeView.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -279,6 +280,7 @@
     <Content Include="Content\Highcharts\js\themes\grid.js" />
     <Content Include="Content\Highcharts\js\themes\sand-signika.js" />
     <Content Include="Content\Highcharts\js\themes\skies.js" />
+    <Content Include="Images\chart.jpg" />
     <Content Include="library\FusionCharts.dll" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
