@@ -320,5 +320,39 @@ namespace DotNetCharts.Controllers
             //Return the view
             return View();
         }
+
+        public ActionResult ParetoChart()
+        {
+            // This page demonstrates the ease of generating charts using FusionCharts.
+            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
+            // Ideally, you would NOT use a physical data file. Instead you'll have
+            // your own ASP.NET scripts virtually relay the XML data document.
+            // FusionCharts supports various data format, please comment the code for
+            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
+            // For a head-start, we've kept this example very simple.
+
+            // Create the chart - pareto2d Chart with data from Data/Data.xml
+            Chart sales = new Chart();
+
+            // Setting chart id
+            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
+
+            // Setting chart type to pareto2d chart
+            sales.SetChartParameter(Chart.ChartParameter.chartType, "pareto2d");
+
+            // Setting chart width to 600px
+            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
+
+            // Setting chart height to 350px
+            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
+
+            // Setting chart data as JSON String (Uncomment below line
+            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Late arrivals by reported cause\",\n    \"subcaption\": \"Last month\",\n    \"pyaxisname\": \"No. of Occurrence\",\n    \"theme\": \"fusion\",\n    \"showsecondarylimits\": \"0\",\n    \"showdivlinesecondaryvalue\": \"0\",\n    \"plottooltext\": \"Due to $label, late arrivals count is : <b>$dataValue</b> of the total <b>$sum</b> employees\",\n    \"drawcrossline\": \"1\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Traffic\",\n      \"value\": \"5680\"\n    },\n    {\n      \"label\": \"Family Engagement\",\n      \"value\": \"1036\"\n    },\n    {\n      \"label\": \"Public Transport\",\n      \"value\": \"950\"\n    },\n    {\n      \"label\": \"Weather\",\n      \"value\": \"500\"\n    },\n    {\n      \"label\": \"Emergency\",\n      \"value\": \"140\"\n    },\n    {\n      \"label\": \"Others\",\n      \"value\": \"68\"\n    }\n  ]\n}", Chart.DataFormat.json);
+
+            ViewData["Chart"] = sales.Render();
+
+            //Return the view
+            return View();
+        }
     }
 }
