@@ -1,21 +1,25 @@
 ﻿@{
     ViewBag.Title = "CHART - HOME";
-    Layout = null;
 }
-
-<link href="~/Content/TreeView/TreeView.css" rel="stylesheet" />
-
-<div class="row">
-    <div class="col-md-3">
-        <div>
-            <h3 class="text-danger">CHARTS</h3>
-            <ul class="tree">
-                <li><a target="_blank" href="@Url.Action("Index","FusionChart")">FusionChart</a></li>
-                <li><a target="_blank" href="@Url.Action("Index","CanvasJsChart")">CanvasJsChart</a></li>
-                <li><a target="_blank" href="@Url.Action("Index","amCharts")">amCharts</a></li>
-                <li><a target="_blank" href="@Url.Action("Index","HighChart")">HighChart</a></li>
-                <li><a target="_blank" href="@Url.Action("Index","d3Chart")">d3Chart</a></li>
-            </ul>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What is CHART?</h2>
+                <p>A chart is a graphical representation of data, in which "the data is represented by symbols, such as bars in a bar chart, lines in a line chart, or slices in a pie chart". A chart can represent tabular numeric data, functions or some kinds of qualitative structure and provides different info.</p>
+            </div>
         </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-3">
+        <h3 class="text-danger">LIBRARIES</h3>
+        <ul class="tree">
+            <li><a target="_blank" href="@Url.Action("Index","FusionChart")">FusionChart</a></li>
+            <li><a target="_blank" href="@Url.Action("Index","CanvasJsChart")">CanvasJsChart</a></li>
+            <li><a target="_blank" href="@Url.Action("Index","amCharts")">amCharts</a></li>
+            <li><a target="_blank" href="@Url.Action("Index","HighChart")">HighChart</a></li>
+            <li><a target="_blank" href="@Url.Action("Index","d3Chart")">d3Chart</a></li>
+        </ul>
     </div>
 </div>

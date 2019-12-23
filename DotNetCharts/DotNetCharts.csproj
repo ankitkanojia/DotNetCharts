@@ -224,6 +224,7 @@
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.js" />
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.js" />
     <Content Include="Content\Fusionchart\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\TreeView\TreeView.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

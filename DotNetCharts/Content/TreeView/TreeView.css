@@ -46,7 +46,7 @@
     }
 
     .tree li:last-child:before {
-        background: white; /* same with body background */
+        /*background: white;*/ /* same with body background */
         height: auto;
         top: 1em; /* (line-height/2) */
         bottom: 0;
