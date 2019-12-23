@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Chart(s) - Ankit Kanojia</title>
+    <link href="~/Content/TreeView/TreeView.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/FusionCharts.js")"></script>
+    <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
+</head>
+<body>
+    <header class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand mr-0 mr-md-2" href="@Url.Action("Index", "Home")">
+            .NET Chart Collections
+        </a>
+    </header>
+    <div class="row">
+        <div class="col-md-9">
+            &nbsp;
+        </div>
+        <div class="col-md-3">
+            <a target="_blank" href="https://github.com/ankitkanojia/DotNetCharts"><img class="githubribbon" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+        </div>
+    </div>
+    <main role="main" class="container-fluid">
+        @RenderBody()
+    </main>
+     @RenderSection("scripts", required: false)
+</body>
+</html>
