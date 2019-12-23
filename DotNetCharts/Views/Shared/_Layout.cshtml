@@ -8,16 +8,16 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container">
             <div class="navbar-header">
                 @Html.ActionLink(".NET Chart Collections", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
     </div>
-    <div>
+    <main>
         @RenderBody()
-    </div>
+    </main>
     <script src="~/Scripts/bootstrap.js"></script>
     @RenderSection("scripts", required: false)
 </body>
