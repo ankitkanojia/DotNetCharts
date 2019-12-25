@@ -281,6 +281,9 @@
     <Content Include="Content\Highcharts\js\themes\sand-signika.js" />
     <Content Include="Content\Highcharts\js\themes\skies.js" />
     <Content Include="Images\chart.jpg" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="library\FusionCharts.dll" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
