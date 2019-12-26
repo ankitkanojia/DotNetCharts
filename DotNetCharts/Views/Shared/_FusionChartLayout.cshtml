@@ -12,16 +12,9 @@
     <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
 </head>
 <body>
-    @Html.Partial("_Header");
+    @Html.Partial("_Header")
+    @Html.Partial("_Ribbon")
     <main role="main" class="container-fluid">
-        <div class="row">
-            <div class="col-md-9">
-                &nbsp;
-            </div>
-            <div class="col-md-3">
-                <a target="_blank" href="https://github.com/ankitkanojia/DotNetCharts"><img class="githubribbon" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-            </div>
-        </div>
         @RenderBody()
     </main>
     @RenderSection("scripts", required: false)
