@@ -395,6 +395,7 @@
     <Content Include="Views\Shared\_FusionChartLayout.cshtml" />
     <Content Include="Views\Shared\_HighChartLayout.cshtml" />
     <Content Include="Views\HighChart\BarChart.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

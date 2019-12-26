@@ -10,16 +10,7 @@
     <link href="~/Content/style.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="https://riowebs.com/">
-            <img width="120" style="border-radius:10px" src="~/Images/logo.jpg" />
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="@Url.Action("Index", "Home")">.NET Chart Collections</a>
-            </li>
-        </ul>
-    </header>
+   @Html.Partial("_Header");
     <div class="row">
         <div class="col-md-9">
             &nbsp;

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.NET Chart(s) - Ankit Kanojia</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/favicon.ico" />
     <link href="~/Content/TreeView/TreeView.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/style.css" rel="stylesheet" />
@@ -11,11 +12,7 @@
     <script src="@Url.Content("~/Content/Fusionchart/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
 </head>
 <body>
-    <header class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand mr-0 mr-md-2" href="@Url.Action("Index", "Home")">
-            .NET Chart Collections
-        </a>
-    </header>
+    @Html.Partial("_Header");
     <main role="main" class="container-fluid">
         <div class="row">
             <div class="col-md-9">
