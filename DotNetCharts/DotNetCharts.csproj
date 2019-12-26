@@ -426,6 +426,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Shared\_FusionChartLayout.cshtml" />
     <Content Include="Views\Shared\_HighChartLayout.cshtml" />
+    <Content Include="Views\HighChart\BarChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

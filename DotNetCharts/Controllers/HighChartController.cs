@@ -87,5 +87,10 @@ namespace DotNetCharts.Controllers
 
             return View(columnChart);
         }
+
+        public ActionResult BarChart()
+        {
+            return View();
+        }
     }
 }
