@@ -47,9 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotNet.Highcharts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=88854f873df851bf, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
-    </Reference>
     <Reference Include="DotNetZip, Version=1.13.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
@@ -228,6 +225,10 @@
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.js" />
     <Content Include="Content\Fusionchart\lib\jquery\dist\jquery.min.js" />
     <Content Include="Content\Fusionchart\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\Highcharts\accessibility.js" />
+    <Content Include="Content\Highcharts\export-data.js" />
+    <Content Include="Content\Highcharts\exporting.js" />
+    <Content Include="Content\Highcharts\highcharts.js" />
     <Content Include="Content\style.css" />
     <Content Include="Content\TreeView\TreeView.css" />
     <Content Include="favicon.ico" />
