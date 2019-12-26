@@ -1,23 +1,18 @@
 ﻿@model DotNet.Highcharts.Highcharts
-
 @{
-    ViewBag.Title = "Highcharts Examples";
-    Layout = null;
+    ViewBag.Title = "Column Chart";
+    Layout = "~/Views/Shared/_HighChartLayout.cshtml";
 }
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<div class="jumbotron">
-    <h3>DotNet Highcharts Example in Asp.Net MVC</h3>
-    <p><a href="http://dotnet.highcharts.com/" class="btn btn-primary btn-lg">Learn more »</a></p>
-</div>
-
-<div class="row">
-    <div>
-
-        <div class="col-md-12 col-md-6">
-            @(Model)
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Simple Column Chart
+            </div>
+            <div class="card-body">
+                @(Model)
+            </div>
         </div>
     </div>
 </div>
-<script src="~/Content/Highcharts/js/highcharts.js"></script>
