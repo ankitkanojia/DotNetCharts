@@ -45,5 +45,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult CombinationsChart()
+        {
+            return View();
+        }
     }
 }
