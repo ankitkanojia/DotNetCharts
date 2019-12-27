@@ -399,6 +399,7 @@
     <Content Include="Views\Shared\_Ribbon.cshtml" />
     <Content Include="Views\HighChart\LineChart.cshtml" />
     <Content Include="Views\HighChart\AreaChart.cshtml" />
+    <Content Include="Views\HighChart\PieChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
