@@ -25,5 +25,30 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult AreaChart()
+        {
+            return View();
+        }
+
+        public ActionResult PieChart()
+        {
+            return View();
+        }
+
+        public ActionResult ScatterChart()
+        {
+            return View();
+        }
+
+        public ActionResult BubbleChart()
+        {
+            return View();
+        }
+
+        public ActionResult CombinationsChart()
+        {
+            return View();
+        }
     }
 }
