@@ -400,6 +400,7 @@
     <Content Include="Views\HighChart\LineChart.cshtml" />
     <Content Include="Views\HighChart\AreaChart.cshtml" />
     <Content Include="Views\HighChart\PieChart.cshtml" />
+    <Content Include="Views\HighChart\ScatterChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
