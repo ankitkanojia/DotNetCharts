@@ -404,6 +404,7 @@
     <Content Include="Views\HighChart\BubbleChart.cshtml" />
     <Content Include="Views\HighChart\CombinationsChart.cshtml" />
     <Content Include="Views\HighChart\AccessibleChart.cshtml" />
+    <Content Include="Views\HighChart\DynamicChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
