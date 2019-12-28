@@ -50,5 +50,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult AccessibleChart()
+        {
+            return View();
+        }
     }
 }
