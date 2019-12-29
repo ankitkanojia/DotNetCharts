@@ -406,6 +406,7 @@
     <Content Include="Views\HighChart\AccessibleChart.cshtml" />
     <Content Include="Views\HighChart\DynamicChart.cshtml" />
     <Content Include="Views\HighChart\GaugesChart.cshtml" />
+    <Content Include="Views\HighChart\HeatMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
