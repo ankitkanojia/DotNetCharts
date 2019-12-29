@@ -65,5 +65,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult HeatMap()
+        {
+            return View();
+        }
     }
 }
