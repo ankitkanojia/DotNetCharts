@@ -75,5 +75,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult TileMap()
+        {
+            return View();
+        }
     }
 }

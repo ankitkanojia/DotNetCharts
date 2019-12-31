@@ -408,6 +408,7 @@
     <Content Include="Views\HighChart\GaugesChart.cshtml" />
     <Content Include="Views\HighChart\HeatMap.cshtml" />
     <Content Include="Views\HighChart\TreeMap.cshtml" />
+    <Content Include="Views\HighChart\TileMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
