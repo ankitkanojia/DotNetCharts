@@ -95,5 +95,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult ParallelCoordinatesChart()
+        {
+            return View();
+        }
     }
 }
