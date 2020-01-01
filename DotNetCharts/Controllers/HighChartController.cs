@@ -90,5 +90,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult SunBurstChart()
+        {
+            return View();
+        }
     }
 }

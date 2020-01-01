@@ -411,6 +411,7 @@
     <Content Include="Views\HighChart\TileMap.cshtml" />
     <Content Include="Views\HighChart\RadarChart.cshtml" />
     <Content Include="Views\HighChart\SpiderWebChart.cshtml" />
+    <Content Include="Views\HighChart\SunBurstChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
