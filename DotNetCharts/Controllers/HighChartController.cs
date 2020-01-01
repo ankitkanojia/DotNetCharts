@@ -85,5 +85,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult SpiderWebChart()
+        {
+            return View();
+        }
     }
 }
