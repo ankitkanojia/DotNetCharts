@@ -413,6 +413,7 @@
     <Content Include="Views\HighChart\SpiderWebChart.cshtml" />
     <Content Include="Views\HighChart\SunBurstChart.cshtml" />
     <Content Include="Views\HighChart\ParallelCoordinatesChart.cshtml" />
+    <Content Include="Views\HighChart\PyramidChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
