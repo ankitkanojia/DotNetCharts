@@ -415,6 +415,7 @@
     <Content Include="Views\HighChart\ParallelCoordinatesChart.cshtml" />
     <Content Include="Views\HighChart\PyramidChart.cshtml" />
     <Content Include="Views\HighChart\OrganizationChart.cshtml" />
+    <Content Include="Views\HighChart\WordcloudChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
