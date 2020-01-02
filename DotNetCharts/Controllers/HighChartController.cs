@@ -105,5 +105,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult OrganizationChart()
+        {
+            return View();
+        }
     }
 }
