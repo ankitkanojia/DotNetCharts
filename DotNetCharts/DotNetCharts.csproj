@@ -419,6 +419,7 @@
     <Content Include="Views\HighChart\VennDiagramChart.cshtml" />
     <Content Include="Views\HighChart\TimeLineChart.cshtml" />
     <Content Include="Views\HighChart\ParliamentChart.cshtml" />
+    <Content Include="Views\HighChart\NetWorkChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
