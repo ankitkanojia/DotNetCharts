@@ -125,5 +125,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult ParliamentChart()
+        {
+            return View();
+        }
     }
 }
