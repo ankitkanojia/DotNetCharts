@@ -130,5 +130,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult NetWorkChart()
+        {
+            return View();
+        }
     }
 }
