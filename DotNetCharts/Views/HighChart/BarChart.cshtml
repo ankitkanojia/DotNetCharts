@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_HighChartLayout.cshtml";
 }
 
-<div  class="row mt-5 mb-5">
+<div class="row mt-5 mb-5">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -11,6 +11,30 @@
             </div>
             <div class="card-body">
                 <div id="container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Stacked Bar Chart
+            </div>
+            <div class="card-body">
+                <div id="stackedcontainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Negative Value Bar Chart
+            </div>
+            <div class="card-body">
+                <div id="nagativecontainer"></div>
             </div>
         </div>
     </div>
@@ -80,6 +104,150 @@
         }, {
             name: 'Year 2016',
             data: [1216, 1001, 4436, 738, 40]
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('stackedcontainer', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Stacked bar chart'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total fruit consumption'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5]
+        }]
+    });
+</script>
+
+<script>
+    // Data gathered from http://populationpyramid.net/germany/2015/
+
+    // Age categories
+    var categories = [
+        '0-4', '5-9', '10-14', '15-19',
+        '20-24', '25-29', '30-34', '35-39', '40-44',
+        '45-49', '50-54', '55-59', '60-64', '65-69',
+        '70-74', '75-79', '80-84', '85-89', '90-94',
+        '95-99', '100 + '
+    ];
+
+    Highcharts.chart('nagativecontainer', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Population pyramid for Germany, 2018'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://populationpyramid.net/germany/2018/">Population Pyramids of the World from 1950 to 2100</a>'
+        },
+        accessibility: {
+            point: {
+                descriptionFormatter: function (point) {
+                    var index = point.index + 1,
+                        category = point.category,
+                        val = Math.abs(point.y),
+                        series = point.series.name;
+
+                    return index + ', Age ' + category + ', ' + val + '%. ' + series + '.';
+                }
+            }
+        },
+        xAxis: [{
+            categories: categories,
+            reversed: false,
+            labels: {
+                step: 1
+            },
+            accessibility: {
+                description: 'Age (male)'
+            }
+        }, { // mirror axis on right side
+            opposite: true,
+            reversed: false,
+            categories: categories,
+            linkedTo: 0,
+            labels: {
+                step: 1
+            },
+            accessibility: {
+                description: 'Age (female)'
+            }
+        }],
+        yAxis: {
+            title: {
+                text: null
+            },
+            labels: {
+                formatter: function () {
+                    return Math.abs(this.value) + '%';
+                }
+            },
+            accessibility: {
+                description: 'Percentage population',
+                rangeDescription: 'Range: 0 to 5%'
+            }
+        },
+
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
+            }
+        },
+
+        series: [{
+            name: 'Male',
+            data: [
+                -2.2, -2.1, -2.2, -2.4,
+                -2.7, -3.0, -3.3, -3.2,
+                -2.9, -3.5, -4.4, -4.1,
+                -3.4, -2.7, -2.3, -2.2,
+                -1.6, -0.6, -0.3, -0.0,
+                -0.0
+            ]
+        }, {
+            name: 'Female',
+            data: [
+                2.1, 2.0, 2.1, 2.3, 2.6,
+                2.9, 3.2, 3.1, 2.9, 3.4,
+                4.3, 4.0, 3.5, 2.9, 2.5,
+                2.7, 2.2, 1.1, 0.6, 0.2,
+                0.0
+            ]
         }]
     });
 </script>
