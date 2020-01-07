@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_HighChartLayout.cshtml";
 }
 
-<div  class="row mt-5 mb-5">
+<div class="row mt-5 mb-5">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -11,6 +11,29 @@
             </div>
             <div class="card-body">
                 <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Stacked Column Chart
+            </div>
+            <div class="card-body">
+                <div id="stackedcontainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Negative Value Column Chart
+            </div>
+            <div class="card-body">
+                <div id="negativecontainer"></div>
             </div>
         </div>
     </div>
@@ -118,6 +141,97 @@
                 2.7, 2.2, 1.1, 0.6, 0.2,
                 0.0
             ]
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('stackedcontainer', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Stacked column chart'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total fruit consumption'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: ( // theme
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                    ) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5]
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('negativecontainer', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Column chart with negative values'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, -2, -3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, -2, 5]
         }]
     });
 </script>
