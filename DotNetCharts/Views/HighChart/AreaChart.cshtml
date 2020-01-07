@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_HighChartLayout.cshtml";
 }
 
-<div  class="row mt-5 mb-5">
+<div class="row mt-5 mb-5">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -11,6 +11,30 @@
             </div>
             <div class="card-body">
                 <div id="container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Staceked Area Chart
+            </div>
+            <div class="card-body">
+                <div id="stackedcontainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Nagative Value Area Chart
+            </div>
+            <div class="card-body">
+                <div id="negativecontainer"></div>
             </div>
         </div>
     </div>
@@ -94,6 +118,95 @@
                 21000, 20000, 19000, 18000, 18000, 17000, 16000, 15537, 14162, 12787,
                 12600, 11400, 5500, 4512, 4502, 4502, 4500, 4500
             ]
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('stackedcontainer', {
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Historic and Estimated Worldwide Population Growth by Region'
+        },
+        subtitle: {
+            text: 'Source: Wikipedia.org'
+        },
+        xAxis: {
+            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Billions'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Asia',
+            data: [502, 635, 809, 947, 1402, 3634, 5268]
+        }, {
+            name: 'Africa',
+            data: [106, 107, 111, 133, 221, 767, 1766]
+        }, {
+            name: 'Europe',
+            data: [163, 203, 276, 408, 547, 729, 628]
+        }, {
+            name: 'America',
+            data: [18, 31, 54, 156, 339, 818, 1201]
+        }, {
+            name: 'Oceania',
+            data: [2, 2, 2, 6, 13, 30, 46]
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('negativecontainer', {
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Area chart with negative values'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, -2, -3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, -2, 5]
         }]
     });
 </script>
