@@ -8,7 +8,14 @@ namespace DotNetCharts.Controllers
 {
     public class d3ChartController : Controller
     {
+        //Library Link : https://www.d3-graph-gallery.com
+
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult BarChart()
         {
             return View();
         }
