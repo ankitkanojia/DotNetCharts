@@ -8,7 +8,6 @@ namespace DotNetCharts.Controllers
 {
     public class d3ChartController : Controller
     {
-        // GET: d3Chart
         public ActionResult Index()
         {
             return View();
