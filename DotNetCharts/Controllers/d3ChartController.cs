@@ -19,5 +19,15 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult AreaChart()
+        {
+            return View();
+        }
+
+        public ActionResult PieChart()
+        {
+            return View();
+        }
     }
 }
