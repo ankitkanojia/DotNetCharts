@@ -425,6 +425,7 @@
     <Content Include="Views\d3Chart\AreaChart.cshtml" />
     <Content Include="Views\d3Chart\PieChart.cshtml" />
     <Content Include="Views\d3Chart\DonutChart.cshtml" />
+    <Content Include="Views\d3Chart\StreamChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -34,5 +34,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult StreamChart()
+        {
+            return View();
+        }
     }
 }
