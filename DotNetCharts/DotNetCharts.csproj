@@ -429,6 +429,7 @@
     <Content Include="Views\d3Chart\LineChart.cshtml" />
     <Content Include="Views\d3Chart\MapChart.cshtml" />
     <Content Include="Views\d3Chart\WordCloudChart.cshtml" />
+    <Content Include="Views\d3Chart\RidgeLineChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
