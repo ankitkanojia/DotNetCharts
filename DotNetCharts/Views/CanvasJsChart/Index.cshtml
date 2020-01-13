@@ -1,54 +1,27 @@
 ﻿@{
-    Layout = null;
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CanvasJS Charts";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <title>Index</title>
-</head>
-<body>
-    <div id="chartContainer"></div>
-
-    <script type="text/javascript">
-
-    		window.onload = function () {
-    			var chart = new CanvasJS.Chart("chartContainer", {
-    				theme: "light2",
-    				animationEnabled: true,
-    				title: {
-    					text: "Simple Column Chart in ASP.NET MVC"
-    				},
-    				subtitles: [
-    					{ text: "Try Resizing the Browser" }
-    				],
-    				data: [
-    				{
-    					type: "column", //change type to bar, line, area, pie, etc
-    					dataPoints: [
-    					{ x: 10, y: 71 },
-    					{ x: 20, y: 55 },
-    					{ x: 30, y: 50 },
-    					{ x: 40, y: 65 },
-    					{ x: 50, y: 95 },
-    					{ x: 60, y: 68 },
-    					{ x: 70, y: 28 },
-    					{ x: 80, y: 34 },
-    					{ x: 90, y: 14 }
-    					]
-                                            //Uncomment below line to add data coming from the controller.
-    					//dataPoints: @Html.Raw(ViewBag.DataPoints),
-    				}
-    				]
-    			});
-    			chart.render();
-    		};
-    </script>
-
-</body>
-</html>
-
+<div class="jumbotron" style="padding-bottom:1%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-success"><b>CanvasJS Charts</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                <div>
+                    <a class="btn btn-success btn-sm" href="https://canvasjs.com/" target="_blank">OFFICIAL SITE</a>
+                    <a class="btn btn-danger btn-sm" href="https://canvasjs.com/license/" target="_blank">PRICE</a>
+                </div>
+                <p>
+                    JavaScript Charts & Graphs with 10x better performance and a simple API. Integrates easily with popular JS Frameworks like AngularJS, etc. Library comes with 30 different types of charts including line, column, bar, area, spline, pie, doughnut, stacked charts, etc. It supports various interactive features like tooltips, zooming, panning, animation, events, drilldown, exporting and can easily be integrated with various server side technologies like PHP, Ruby, Python, ASP.Net, Node.JS, Java, etc. To top it all off, it can easily render thousands of data-points without any performance lag.
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-danger">CanvasJS Chart Library</h3>
+                <ul class="tree"></ul>
+            </div>
+        </div>
+    </div>
+</div>
