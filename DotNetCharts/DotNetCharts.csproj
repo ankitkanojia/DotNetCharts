@@ -433,6 +433,7 @@
     <Content Include="Views\d3Chart\RidgeLineChart.cshtml" />
     <Content Include="Views\CanvasJsChart\ColumnChart.cshtml" />
     <Content Include="Views\Shared\_CanvasJSChartLayout.cshtml" />
+    <Content Include="Views\CanvasJsChart\LineChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
