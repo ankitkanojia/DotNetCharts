@@ -179,6 +179,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CanvasJS\canvasjs.min.js" />
     <Content Include="Content\d3chart\d3.js" />
     <Content Include="Content\Fusionchart\css\site.css" />
     <Content Include="Content\Fusionchart\css\site.min.css" />
@@ -430,6 +431,8 @@
     <Content Include="Views\d3Chart\MapChart.cshtml" />
     <Content Include="Views\d3Chart\WordCloudChart.cshtml" />
     <Content Include="Views\d3Chart\RidgeLineChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\ColumnChart.cshtml" />
+    <Content Include="Views\Shared\_CanvasJSChartLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
