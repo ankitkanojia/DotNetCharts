@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "FunnelChart";
+    Layout = "~/Views/Shared/_CanvasJSChartLayout.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Simple Funnel Chart
+            </div>
+            <div class="card-body">
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2", //"light1", "dark1", "dark2"
+            title: {
+                text: "Sales Analysis - June 2016"
+            },
+            data: [{
+                type: "funnel",
+                indexLabelPlacement: "inside",
+                indexLabelFontColor: "white",
+                toolTipContent: "<b>{label}</b>: {y} <b>({percentage}%)</b>",
+                indexLabel: "{label} ({percentage}%)",
+                dataPoints: [
+                    { y: 1400, label: "Leads" },
+                    { y: 1212, label: "Initial Communication" },
+                    { y: 1080, label: "Customer Evaluation" },
+                    { y: 665, label: "Negotiation" },
+                    { y: 578, label: "Order Received" },
+                    { y: 549, label: "Payment" }
+                ]
+            }]
+        });
+        calculatePercentage();
+        chart.render();
+
+        function calculatePercentage() {
+            var dataPoint = chart.options.data[0].dataPoints;
+            var total = dataPoint[0].y;
+            for (var i = 0; i < dataPoint.length; i++) {
+                if (i == 0) {
+                    chart.options.data[0].dataPoints[i].percentage = 100;
+                } else {
+                    chart.options.data[0].dataPoints[i].percentage = ((dataPoint[i].y / total) * 100).toFixed(2);
+                }
+            }
+        }
+
+    }
+</script>
