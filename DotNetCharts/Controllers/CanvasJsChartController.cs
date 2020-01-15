@@ -36,5 +36,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult PieChart()
+        {
+            return View();
+        }
     }
 }

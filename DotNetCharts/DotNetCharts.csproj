@@ -436,6 +436,7 @@
     <Content Include="Views\CanvasJsChart\LineChart.cshtml" />
     <Content Include="Views\CanvasJsChart\AreaChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BarChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\PieChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
