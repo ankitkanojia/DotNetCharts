@@ -440,6 +440,7 @@
     <Content Include="Views\CanvasJsChart\FunnelChart.cshtml" />
     <Content Include="Views\CanvasJsChart\FinancialChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BoxWhiskerChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\ScatterChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
