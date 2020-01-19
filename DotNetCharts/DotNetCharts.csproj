@@ -441,6 +441,7 @@
     <Content Include="Views\CanvasJsChart\FinancialChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BoxWhiskerChart.cshtml" />
     <Content Include="Views\CanvasJsChart\ScatterChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\BubbleChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
