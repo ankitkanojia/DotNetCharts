@@ -443,6 +443,7 @@
     <Content Include="Views\CanvasJsChart\ScatterChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BubbleChart.cshtml" />
     <Content Include="Views\CanvasJsChart\CombinationChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\DynamicChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
