@@ -71,5 +71,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult DynamicChart()
+        {
+            return View();
+        }
     }
 }
