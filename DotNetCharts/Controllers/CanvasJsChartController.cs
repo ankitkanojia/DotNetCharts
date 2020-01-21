@@ -76,5 +76,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult LiveChart()
+        {
+            return View();
+        }
     }
 }
