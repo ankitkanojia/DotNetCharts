@@ -8,6 +8,8 @@ namespace DotNetCharts.Controllers
 {
     public class amChartsController : Controller
     {
+        //Library Link : https://www.amcharts.com/demos/
+
         public ActionResult Index()
         {
             return View();
