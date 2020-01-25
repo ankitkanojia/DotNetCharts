@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Chart(s) - Ankit Kanojia</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/favicon.ico" />
+    <link href="~/Content/TreeView/TreeView.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Content/amChart/core.js"></script>
+    <script src="~/Content/amChart/charts.js"></script>
+    <script src="~/Content/amChart/animated.js"></script>
+</head>
+<body>
+    @Html.Partial("_Header")
+    @Html.Partial("_Ribbon")
+    <main role="main" class="container-fluid">
+        @RenderBody()
+    </main>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
