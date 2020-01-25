@@ -173,6 +173,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\amChart\animated.js" />
+    <Content Include="Content\amChart\charts.js" />
+    <Content Include="Content\amChart\core.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -443,6 +446,10 @@
     <Content Include="Views\CanvasJsChart\ScatterChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BubbleChart.cshtml" />
     <Content Include="Views\amCharts\ColumnChart.cshtml" />
+    <Content Include="Views\Shared\_amChartLayout.cshtml" />
+    <Content Include="Views\CanvasJsChart\CombinationChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\DynamicChart.cshtml" />
+    <Content Include="Views\CanvasJsChart\LiveChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
