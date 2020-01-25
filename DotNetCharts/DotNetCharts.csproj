@@ -442,9 +442,7 @@
     <Content Include="Views\CanvasJsChart\BoxWhiskerChart.cshtml" />
     <Content Include="Views\CanvasJsChart\ScatterChart.cshtml" />
     <Content Include="Views\CanvasJsChart\BubbleChart.cshtml" />
-    <Content Include="Views\CanvasJsChart\CombinationChart.cshtml" />
-    <Content Include="Views\CanvasJsChart\DynamicChart.cshtml" />
-    <Content Include="Views\CanvasJsChart\LiveChart.cshtml" />
+    <Content Include="Views\amCharts\ColumnChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
