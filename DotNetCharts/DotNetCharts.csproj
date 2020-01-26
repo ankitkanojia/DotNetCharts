@@ -450,6 +450,7 @@
     <Content Include="Views\CanvasJsChart\CombinationChart.cshtml" />
     <Content Include="Views\CanvasJsChart\DynamicChart.cshtml" />
     <Content Include="Views\CanvasJsChart\LiveChart.cshtml" />
+    <Content Include="Views\amCharts\PieChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
