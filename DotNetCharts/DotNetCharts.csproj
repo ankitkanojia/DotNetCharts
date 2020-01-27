@@ -452,6 +452,7 @@
     <Content Include="Views\CanvasJsChart\LiveChart.cshtml" />
     <Content Include="Views\amCharts\PieChart.cshtml" />
     <Content Include="Views\amCharts\ChordDiagram.cshtml" />
+    <Content Include="Views\amCharts\ChordDiagramAnimated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
