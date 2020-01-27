@@ -29,5 +29,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult ChordDiagramAnimated()
+        {
+            return View();
+        }
     }
 }
