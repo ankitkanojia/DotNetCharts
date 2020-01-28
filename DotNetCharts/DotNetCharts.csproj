@@ -454,6 +454,7 @@
     <Content Include="Views\amCharts\ChordDiagram.cshtml" />
     <Content Include="Views\amCharts\ChordDiagramAnimated.cshtml" />
     <Content Include="Views\amCharts\LineChart.cshtml" />
+    <Content Include="Views\amCharts\AreaChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
