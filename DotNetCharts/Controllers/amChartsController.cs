@@ -44,5 +44,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult DonutChart()
+        {
+            return View();
+        }
     }
 }
