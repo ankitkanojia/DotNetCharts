@@ -54,5 +54,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult BoxPlotChart()
+        {
+            return View();
+        }
     }
 }
