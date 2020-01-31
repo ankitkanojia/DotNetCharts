@@ -59,5 +59,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult GaugeChart()
+        {
+            return View();
+        }
     }
 }
