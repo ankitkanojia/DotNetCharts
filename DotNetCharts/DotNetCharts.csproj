@@ -459,6 +459,7 @@
     <Content Include="Views\amCharts\StockChart.cshtml" />
     <Content Include="Views\amCharts\BoxPlotChart.cshtml" />
     <Content Include="Views\amCharts\GaugeChart.cshtml" />
+    <Content Include="Views\amCharts\PictorialChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
