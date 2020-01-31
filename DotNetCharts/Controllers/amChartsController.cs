@@ -64,5 +64,9 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+        public ActionResult PictorialChart()
+        {
+            return View();
+        }
     }
 }
