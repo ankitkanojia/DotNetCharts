@@ -64,7 +64,13 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
         public ActionResult PictorialChart()
+        {
+            return View();
+        }
+
+        public ActionResult BubbleChart()
         {
             return View();
         }
