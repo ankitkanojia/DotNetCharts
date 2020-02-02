@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "FunnelChart";
+    Layout = "~/Views/Shared/_amChartLayout.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Simple Funnel Chart
+            </div>
+            <div class="card-body">
+                <div id="chartdiv" style=" width: 100%;height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        let chart = am4core.create("chartdiv", am4charts.SlicedChart);
+        chart.data = [{
+            "name": "Stage #1",
+            "value": 600
+        }, {
+            "name": "Stage #2",
+            "value": 300
+        }, {
+            "name": "Stage #3",
+            "value": 200
+        }, {
+            "name": "Stage #4",
+            "value": 180
+        }, {
+            "name": "Stage #5",
+            "value": 50
+        }, {
+            "name": "Stage #6",
+            "value": 20
+        }, {
+            "name": "Stage #7",
+            "value": 10
+        }];
+
+        let series = chart.series.push(new am4charts.FunnelSeries());
+        series.dataFields.value = "value";
+        series.dataFields.category = "name";
+
+        var fillModifier = new am4core.LinearGradientModifier();
+        fillModifier.brightnesses = [-0.5, 1, -0.5];
+        fillModifier.offsets = [0, 0.5, 1];
+        series.slices.template.fillModifier = fillModifier;
+        series.alignLabels = true;
+
+        series.labels.template.text = "{category}: [bold]{value}[/]";
+
+    }); // end am4core.ready()
+</script>

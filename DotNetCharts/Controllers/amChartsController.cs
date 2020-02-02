@@ -74,5 +74,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult FunnelChart()
+        {
+            return View();
+        }
     }
 }
