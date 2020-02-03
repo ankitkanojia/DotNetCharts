@@ -79,5 +79,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult PyramidChart()
+        {
+            return View();
+        }
     }
 }
