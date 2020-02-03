@@ -463,6 +463,7 @@
     <Content Include="Views\amCharts\BubbleChart.cshtml" />
     <Content Include="Views\amCharts\FunnelChart.cshtml" />
     <Content Include="Views\amCharts\PyramidChart.cshtml" />
+    <Content Include="Views\amCharts\FlowDiagram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
