@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Funnel/Pyramid Chart";
+    Layout = "~/Views/Shared/_amChartLayout.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Simple Funnel/Pyramid Chart
+            </div>
+            <div class="card-body">
+                <div id="chartdiv" style=" width: 100%;height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartdiv", am4charts.SlicedChart);
+        chart.data = [{
+            "name": "Stage #1",
+            "value1": 600,
+            "value2": 450
+        }, {
+            "name": "Stage #2",
+            "value1": 300,
+            "value2": 400
+        }, {
+            "name": "Stage #3",
+            "value1": 200,
+            "value2": 290
+        }, {
+            "name": "Stage #4",
+            "value1": 180,
+            "value2": 100
+        }, {
+            "name": "Stage #5",
+            "value1": 50,
+            "value2": 50
+        }, {
+            "name": "Stage #6",
+            "value1": 20,
+            "value2": 20
+        }, {
+            "name": "Stage #7",
+            "value1": 10,
+            "value2": 10
+        }];
+
+        var series1 = chart.series.push(new am4charts.FunnelSeries());
+        series1.dataFields.value = "value2";
+        series1.dataFields.category = "name";
+        series1.labels.template.disabled = true;
+
+        var series2 = chart.series.push(new am4charts.PyramidSeries());
+        series2.dataFields.value = "value2";
+        series2.dataFields.category = "name";
+        series2.labels.template.disabled = true;
+
+    }); // end am4core.ready()
+</script>
