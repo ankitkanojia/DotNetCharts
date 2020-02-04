@@ -89,5 +89,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult RadarDiagram()
+        {
+            return View();
+        }
     }
 }
