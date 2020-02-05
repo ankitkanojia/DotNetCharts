@@ -466,6 +466,7 @@
     <Content Include="Views\amCharts\FlowDiagram.cshtml" />
     <Content Include="Views\amCharts\RadarDiagram.cshtml" />
     <Content Include="Views\amCharts\PolarDiagram.cshtml" />
+    <Content Include="Views\amCharts\CandlestickChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
