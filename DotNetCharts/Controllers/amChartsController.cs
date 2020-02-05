@@ -99,5 +99,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult CandlestickChart()
+        {
+            return View();
+        }
     }
 }
