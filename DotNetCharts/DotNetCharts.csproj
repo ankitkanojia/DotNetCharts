@@ -467,6 +467,7 @@
     <Content Include="Views\amCharts\RadarDiagram.cshtml" />
     <Content Include="Views\amCharts\PolarDiagram.cshtml" />
     <Content Include="Views\amCharts\CandlestickChart.cshtml" />
+    <Content Include="Views\amCharts\TreeMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
