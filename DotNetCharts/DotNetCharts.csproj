@@ -469,6 +469,7 @@
     <Content Include="Views\amCharts\CandlestickChart.cshtml" />
     <Content Include="Views\amCharts\TreeMap.cshtml" />
     <Content Include="Views\amCharts\TimeLine.cshtml" />
+    <Content Include="Views\amCharts\DumbbellPlot.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
