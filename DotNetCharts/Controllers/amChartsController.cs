@@ -114,5 +114,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult DumbbellPlot()
+        {
+            return View();
+        }
     }
 }
