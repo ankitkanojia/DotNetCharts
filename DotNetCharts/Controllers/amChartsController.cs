@@ -109,5 +109,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult TimeLine()
+        {
+            return View();
+        }
     }
 }
