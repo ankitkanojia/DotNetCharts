@@ -119,5 +119,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult WordCloud()
+        {
+            return View();
+        }
     }
 }

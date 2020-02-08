@@ -470,6 +470,7 @@
     <Content Include="Views\amCharts\TreeMap.cshtml" />
     <Content Include="Views\amCharts\TimeLine.cshtml" />
     <Content Include="Views\amCharts\DumbbellPlot.cshtml" />
+    <Content Include="Views\amCharts\WordCloud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
