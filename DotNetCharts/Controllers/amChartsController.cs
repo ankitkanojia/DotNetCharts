@@ -124,5 +124,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult RadarTimeLine()
+        {
+            return View();
+        }
     }
 }
