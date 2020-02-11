@@ -473,6 +473,7 @@
     <Content Include="Views\amCharts\WordCloud.cshtml" />
     <Content Include="Views\amCharts\RadarTimeLine.cshtml" />
     <Content Include="Views\amCharts\OHLCChart.cshtml" />
+    <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
