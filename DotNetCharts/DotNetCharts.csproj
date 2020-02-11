@@ -472,6 +472,7 @@
     <Content Include="Views\amCharts\DumbbellPlot.cshtml" />
     <Content Include="Views\amCharts\WordCloud.cshtml" />
     <Content Include="Views\amCharts\RadarTimeLine.cshtml" />
+    <Content Include="Views\amCharts\OHLCChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

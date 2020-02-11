@@ -129,5 +129,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult OHLCChart()
+        {
+            return View();
+        }
     }
 }
