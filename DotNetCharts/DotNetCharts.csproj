@@ -474,6 +474,7 @@
     <Content Include="Views\amCharts\RadarTimeLine.cshtml" />
     <Content Include="Views\amCharts\OHLCChart.cshtml" />
     <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
+    <Content Include="Views\amCharts\ForceDirectedNetwork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
