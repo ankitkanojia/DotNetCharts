@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "BellCurveSeries";
+    Layout = "~/Views/Shared/_amChartLayout.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Simple Bell Curve Series
+            </div>
+            <div class="card-body">
+                <div id="chartdiv" style=" width: 100%;height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+
+        // Title
+        var title = chart.titles.create();
+        title.text = "Biggest U.S. retailers by 2018 revenue";
+        title.fontSize = 20;
+        title.marginBottom = 20;
+
+        // Set format
+        chart.numberFormatter.numberFormat = "'[font-size: 10]US$[/] [bold]'#.0B";
+
+        // Create axes
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.labels.template.disabled = true;
+        categoryAxis.dataFields.category = "category";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+        // Set data
+        chart.data = [{
+            "category": "",
+            "Walmart": 387.66,
+            "Amazon.com": 120.93,
+            "The Kroger Co.": 119.70,
+            "Costco": 101.43,
+            "Walgreens Boots Alliance": 98.39,
+            "The Home Depot": 97.27,
+            "CVS Health Corporation": 83.79,
+            "Target": 74.48,
+            "Lowe's Companies": 64.09,
+            "Albertsons Companies": 59.71
+        }];
+
+        // Series
+        var data = chart.data[0];
+        for (var key in data) {
+            if (data.hasOwnProperty(key) && key != "category") {
+                var series = chart.series.push(new am4charts.CurvedColumnSeries());
+                series.dataFields.categoryX = "category";
+                series.dataFields.valueY = key;
+                series.name = key;
+                series.tooltipText = "{name}: {valueY.value}";
+                series.columns.template.strokeWidth = 2;
+                series.columns.template.strokeOpacity = 1;
+                series.columns.template.fillOpacity = 0;
+                series.columns.template.width = am4core.percent(100);
+                series.clustered = false;
+            }
+        }
+
+        // Cursor
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.maxTooltipDistance = 10;
+
+        // Legend
+        chart.legend = new am4charts.Legend();
+        chart.legend.fontSize = 12;
+        chart.legend.position = "right";
+        chart.legend.valign = "top";
+        chart.legend.marginTop = 0;
+        chart.legend.labels.template.width = 130;
+        chart.legend.labels.template.truncate = true;
+        chart.legend.valueLabels.template.text = "{valueY.close}"
+        chart.legend.valueLabels.template.fontSize = 12;
+
+    }); // end am4core.ready()
+</script>

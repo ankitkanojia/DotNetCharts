@@ -144,5 +144,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult BellCurveSeries()
+        {
+            return View();
+        }
     }
 }
