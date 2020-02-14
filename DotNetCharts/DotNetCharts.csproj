@@ -477,6 +477,7 @@
     <Content Include="Views\amCharts\ForceDirectedNetwork.cshtml" />
     <Content Include="Views\amCharts\BellCurveSeries.cshtml" />
     <Content Include="Views\amCharts\AnnotatingCharts.cshtml" />
+    <Content Include="Views\amCharts\VarianceIndicators.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
