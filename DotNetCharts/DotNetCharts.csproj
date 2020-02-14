@@ -476,6 +476,7 @@
     <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
     <Content Include="Views\amCharts\ForceDirectedNetwork.cshtml" />
     <Content Include="Views\amCharts\BellCurveSeries.cshtml" />
+    <Content Include="Views\amCharts\AnnotatingCharts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
