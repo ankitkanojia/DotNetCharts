@@ -159,5 +159,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult VennDiagram()
+        {
+            return View();
+        }
     }
 }

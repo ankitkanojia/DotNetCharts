@@ -472,12 +472,7 @@
     <Content Include="Views\amCharts\DumbbellPlot.cshtml" />
     <Content Include="Views\amCharts\WordCloud.cshtml" />
     <Content Include="Views\amCharts\RadarTimeLine.cshtml" />
-    <Content Include="Views\amCharts\OHLCChart.cshtml" />
-    <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
-    <Content Include="Views\amCharts\ForceDirectedNetwork.cshtml" />
-    <Content Include="Views\amCharts\BellCurveSeries.cshtml" />
-    <Content Include="Views\amCharts\AnnotatingCharts.cshtml" />
-    <Content Include="Views\amCharts\VarianceIndicators.cshtml" />
+    <Content Include="Views\amCharts\VennDiagram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
