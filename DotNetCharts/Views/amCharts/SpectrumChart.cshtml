@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "SpectrumChart";
+    Layout = "~/Views/Shared/_amChartLayout.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Simple Spectrum Chart
+            </div>
+            <div class="card-body">
+                <div id="chartdiv" style=" width: 100%;height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+        // Add data
+        chart.data = [{
+            "category": "",
+            "from": new Date(2019, 0, 1, 11, 0),
+            "to": new Date(2019, 0, 1, 12, 30),
+            "color": am4core.color("#69a74f")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 12, 30),
+            "to": new Date(2019, 0, 1, 12, 45),
+            "color": am4core.color("#fb9900")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 12, 45),
+            "to": new Date(2019, 0, 1, 14, 3),
+            "color": am4core.color("#69a74f")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 14, 3),
+            "to": new Date(2019, 0, 1, 14, 14),
+            "color": am4core.color("#664ea6")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 14, 14),
+            "to": new Date(2019, 0, 1, 14, 38),
+            "color": am4core.color("#cc0c00")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 14, 38),
+            "to": new Date(2019, 0, 1, 15, 1),
+            "color": am4core.color("#fb9900")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 15, 1),
+            "to": new Date(2019, 0, 1, 16, 37),
+            "color": am4core.color("#69a74f")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 16, 37),
+            "to": new Date(2019, 0, 1, 16, 55),
+            "color": am4core.color("#9900ff")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 16, 55),
+            "to": new Date(2019, 0, 1, 17, 7),
+            "color": am4core.color("#69a74f")
+        }, {
+            "category": "",
+            "from": new Date(2019, 0, 1, 17, 7),
+            "to": new Date(2019, 0, 1, 17, 30),
+            "color": am4core.color("#fb9900")
+        }];
+
+        // Create axes
+        var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+        yAxis.dataFields.category = "category";
+        yAxis.renderer.grid.template.disabled = true;
+        yAxis.renderer.labels.template.disabled = true;
+
+        var xAxis = chart.xAxes.push(new am4charts.DateAxis());
+        xAxis.renderer.grid.template.disabled = true;
+        xAxis.renderer.grid.template.disabled = true;
+        xAxis.renderer.labels.template.disabled = true;
+        xAxis.baseInterval = {
+            "timeUnit": "minute",
+            "count": 1
+        };
+
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.dateX = "to";
+        series.dataFields.openDateX = "from";
+        series.dataFields.categoryY = "category";
+        series.columns.template.propertyFields.fill = "color";
+        series.columns.template.strokeOpacity = 0;
+        series.columns.template.height = am4core.percent(100);
+
+        // Ranges/labels
+        chart.events.on("beforedatavalidated", function (ev) {
+            var data = chart.data;
+            for (var i = 0; i < data.length; i++) {
+                var range = xAxis.axisRanges.create();
+                range.date = data[i].from;
+                range.endDate = data[i].to;
+                range.label.text = chart.dateFormatter.format(data[i].from, "HH:mm");
+                range.label.horizontalCenter = "left";
+                range.label.paddingLeft = 5;
+                range.label.paddingTop = 5;
+                range.label.fontSize = 10;
+                range.grid.strokeOpacity = 0.2;
+                range.tick.length = 18;
+                range.tick.strokeOpacity = 0.2;
+            }
+        });
+
+        // Legend
+        var legend = new am4charts.Legend();
+        legend.parent = chart.chartContainer;
+        legend.itemContainers.template.clickable = false;
+        legend.itemContainers.template.focusable = false;
+        legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;
+        legend.align = "right";
+        legend.data = [{
+            "name": "Normal operation",
+            "fill": am4core.color("#69a74f")
+        }, {
+            "name": "Minor alarm",
+            "fill": am4core.color("#fb9900")
+        }, {
+            "name": "Anomaly",
+            "fill": am4core.color("#664ea6")
+        }, {
+            "name": "Critical error",
+            "fill": am4core.color("#cc0c00")
+        }];
+
+    }); // end am4core.ready()
+</script>

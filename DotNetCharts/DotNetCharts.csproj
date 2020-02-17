@@ -475,6 +475,7 @@
     <Content Include="Views\amCharts\VennDiagram.cshtml" />
     <Content Include="Views\amCharts\CylinderGauge.cshtml" />
     <Content Include="Views\amCharts\SunburstChart.cshtml" />
+    <Content Include="Views\amCharts\SpectrumChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
