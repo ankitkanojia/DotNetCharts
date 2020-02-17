@@ -174,5 +174,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult SpectrumChart()
+        {
+            return View();
+        }
     }
 }
