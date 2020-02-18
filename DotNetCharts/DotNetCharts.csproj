@@ -476,6 +476,7 @@
     <Content Include="Views\amCharts\CylinderGauge.cshtml" />
     <Content Include="Views\amCharts\SunburstChart.cshtml" />
     <Content Include="Views\amCharts\SpectrumChart.cshtml" />
+    <Content Include="Views\amCharts\TransportMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

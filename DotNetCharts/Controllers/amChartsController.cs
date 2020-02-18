@@ -179,5 +179,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult TransportMap()
+        {
+            return View();
+        }
     }
 }
