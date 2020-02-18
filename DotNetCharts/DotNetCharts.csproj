@@ -477,6 +477,7 @@
     <Content Include="Views\amCharts\SunburstChart.cshtml" />
     <Content Include="Views\amCharts\SpectrumChart.cshtml" />
     <Content Include="Views\amCharts\TransportMap.cshtml" />
+    <Content Include="Views\amCharts\StackedAxis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
