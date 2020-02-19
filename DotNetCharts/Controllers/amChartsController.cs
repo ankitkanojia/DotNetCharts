@@ -189,5 +189,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult PieChartAsBullets()
+        {
+            return View();
+        }
     }
 }
