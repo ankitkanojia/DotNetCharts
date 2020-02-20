@@ -479,6 +479,7 @@
     <Content Include="Views\amCharts\TransportMap.cshtml" />
     <Content Include="Views\amCharts\StackedAxis.cshtml" />
     <Content Include="Views\amCharts\PieChartAsBullets.cshtml" />
+    <Content Include="Views\amCharts\AnimatedSankeyDiagram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
