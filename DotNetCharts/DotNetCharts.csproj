@@ -480,6 +480,7 @@
     <Content Include="Views\amCharts\StackedAxis.cshtml" />
     <Content Include="Views\amCharts\PieChartAsBullets.cshtml" />
     <Content Include="Views\amCharts\AnimatedSankeyDiagram.cshtml" />
+    <Content Include="Views\amCharts\CountriesMorphingToHeart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
