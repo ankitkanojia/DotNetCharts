@@ -194,5 +194,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult AnimatedSankeyDiagram()
+        {
+            return View();
+        }
     }
 }
