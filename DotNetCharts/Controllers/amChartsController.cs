@@ -200,5 +200,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult RotatingGlobe()
+        {
+            return View();
+        }
     }
 }
