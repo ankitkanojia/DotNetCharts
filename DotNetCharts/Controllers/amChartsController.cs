@@ -205,5 +205,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult MultiSeriesMap()
+        {
+            return View();
+        }
     }
 }

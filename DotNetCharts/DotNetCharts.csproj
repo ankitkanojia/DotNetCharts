@@ -482,6 +482,7 @@
     <Content Include="Views\amCharts\AnimatedSankeyDiagram.cshtml" />
     <Content Include="Views\amCharts\CountriesMorphingToHeart.cshtml" />
     <Content Include="Views\amCharts\RotatingGlobe.cshtml" />
+    <Content Include="Views\amCharts\MultiSeriesMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
