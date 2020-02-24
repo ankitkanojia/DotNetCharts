@@ -483,6 +483,7 @@
     <Content Include="Views\amCharts\CountriesMorphingToHeart.cshtml" />
     <Content Include="Views\amCharts\RotatingGlobe.cshtml" />
     <Content Include="Views\amCharts\MultiSeriesMap.cshtml" />
+    <Content Include="Views\amCharts\MapImageDrillDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
