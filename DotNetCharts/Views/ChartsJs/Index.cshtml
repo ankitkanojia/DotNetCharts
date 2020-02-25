@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Chart.Js";
+    Layout = "~/Views/Shared/_chartjs.cshtml";
+}
+
+<div class="jumbotron" style="padding-bottom:1%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-success"><b>amcharts Chart</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                <div>
+                    <a class="btn btn-success btn-sm" href="https://www.chartjs.org" target="_blank">OFFICIAL SITE</a>
+                    <a class="btn btn-danger btn-sm" href="https://www.chartjs.org/docs/latest/notes/license.html" target="_blank">PRICE</a>
+                </div>
+                <p>
+                    It's easy to get started with Chart.js. All that's required is the script included in your page along with a single <canvas> node to render the chart.
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="text-danger">amcharts Chart Library</h3>
+                <ul class="tree">
+                    <li><a target="_blank" href="@Url.Action("ColumnChart","amCharts")">Column Chart</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
