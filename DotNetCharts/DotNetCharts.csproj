@@ -184,6 +184,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CanvasJS\canvasjs.min.js" />
+    <Content Include="Content\chartjs\chart.js" />
     <Content Include="Content\d3chart\d3.js" />
     <Content Include="Content\Fusionchart\css\site.css" />
     <Content Include="Content\Fusionchart\css\site.min.css" />
@@ -487,6 +488,7 @@
     <Content Include="Views\amCharts\MapImageDrillDown.cshtml" />
     <Content Include="Views\ChartsJs\Index.cshtml" />
     <Content Include="Views\Shared\_chartjs.cshtml" />
+    <Content Include="Views\ChartsJs\LineChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
