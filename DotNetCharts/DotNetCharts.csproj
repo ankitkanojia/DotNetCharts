@@ -163,6 +163,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\amChartsController.cs" />
     <Compile Include="Controllers\CanvasJsChartController.cs" />
+    <Compile Include="Controllers\ChartsJsController.cs" />
     <Compile Include="Controllers\d3ChartController.cs" />
     <Compile Include="Controllers\FusionChartController.cs" />
     <Compile Include="Controllers\HighChartController.cs" />
@@ -484,6 +485,8 @@
     <Content Include="Views\amCharts\RotatingGlobe.cshtml" />
     <Content Include="Views\amCharts\MultiSeriesMap.cshtml" />
     <Content Include="Views\amCharts\MapImageDrillDown.cshtml" />
+    <Content Include="Views\ChartsJs\Index.cshtml" />
+    <Content Include="Views\Shared\_chartjs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
