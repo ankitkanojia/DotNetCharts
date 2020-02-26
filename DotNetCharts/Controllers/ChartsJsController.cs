@@ -8,8 +8,19 @@ namespace DotNetCharts.Controllers
 {
     public class ChartsJsController : Controller
     {
-        // GET: ChartsJs
+        //Library Link : https://www.chartjs.org/docs/latest/getting-started/
+        
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult LineChart()
+        {
+            return View();
+        }
+
+        public ActionResult BarChart()
         {
             return View();
         }
