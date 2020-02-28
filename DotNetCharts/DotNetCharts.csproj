@@ -491,6 +491,7 @@
     <Content Include="Views\ChartsJs\LineChart.cshtml" />
     <Content Include="Views\ChartsJs\BarChart.cshtml" />
     <Content Include="Views\ChartsJs\RadarChart.cshtml" />
+    <Content Include="Views\ChartsJs\AreaChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
