@@ -493,6 +493,7 @@
     <Content Include="Views\ChartsJs\RadarChart.cshtml" />
     <Content Include="Views\ChartsJs\AreaChart.cshtml" />
     <Content Include="Views\ChartsJs\PolarChart.cshtml" />
+    <Content Include="Views\ChartsJs\BubbleChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

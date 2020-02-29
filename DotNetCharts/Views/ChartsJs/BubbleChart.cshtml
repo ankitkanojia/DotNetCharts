@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Bubble Chart";
+    Layout = "~/Views/Shared/_chartjs.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header">
+                Simple Bubble Chart
+            </div>
+            <div class="card-body">
+                <canvas id="myChart" height="150"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+new Chart(document.getElementById("myChart"), {
+	"type": "bubble",
+	"data": {
+		"datasets": [{
+			"label": "First Dataset",
+			"data": [{
+				"x": 20,
+				"y": 30,
+				"r": 15
+			}, {
+				"x": 40,
+				"y": 10,
+				"r": 10
+			}],
+			"backgroundColor": "rgb(255, 99, 132)"
+		}]
+	}
+});
+</script>
