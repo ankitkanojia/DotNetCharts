@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Polar Chart";
+    Layout = "~/Views/Shared/_chartjs.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Simple Polar Chart
+            </div>
+            <div class="card-body">
+                <canvas id="myChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+new Chart(document.getElementById("myChart"), {
+	"type": "polarArea",
+	"data": {
+		"labels": ["Red", "Green", "Yellow", "Grey", "Blue"],
+		"datasets": [{
+			"label": "My First Dataset",
+			"data": [11, 16, 7, 3, 14],
+			"backgroundColor": ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 205, 86)", "rgb(201, 203, 207)", "rgb(54, 162, 235)"]
+		}]
+	}
+})
+</script>
