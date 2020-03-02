@@ -49,5 +49,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult MixedChart()
+        {
+            return View();
+        }
     }
 }
