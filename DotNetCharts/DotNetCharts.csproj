@@ -168,6 +168,7 @@
     <Compile Include="Controllers\FusionChartController.cs" />
     <Compile Include="Controllers\HighChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MorrisJsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,11 @@
     <Content Include="Content\Highcharts\export-data.js" />
     <Content Include="Content\Highcharts\exporting.js" />
     <Content Include="Content\Highcharts\highcharts.js" />
+    <Content Include="Content\MorrisJs\morris.css" />
+    <Content Include="Content\MorrisJs\morris.js" />
+    <Content Include="Content\MorrisJs\prettify.min.css" />
+    <Content Include="Content\MorrisJs\prettify.min.js" />
+    <Content Include="Content\MorrisJs\raphael-min.js" />
     <Content Include="Content\style.css" />
     <Content Include="Content\TreeView\TreeView.css" />
     <Content Include="favicon.ico" />
@@ -496,6 +502,8 @@
     <Content Include="Views\ChartsJs\BubbleChart.cshtml" />
     <Content Include="Views\ChartsJs\DoughnutChart.cshtml" />
     <Content Include="Views\ChartsJs\MixedChart.cshtml" />
+    <Content Include="Views\MorrisJs\Index.cshtml" />
+    <Content Include="Views\Shared\_morrisjs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
