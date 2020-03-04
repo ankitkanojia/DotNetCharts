@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Chart(s) - Ankit Kanojia</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/favicon.ico" />
+    <link href="~/Content/TreeView/TreeView.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/Content/MorrisJs/raphael-min.js"></script>
+    <script src="~/Content/MorrisJs/morris.js"></script>
+    <script src="~/Content/MorrisJs/prettify.min.js"></script>
+    <link href="~/Content/MorrisJs/morris.css" rel="stylesheet" />
+    <link href="~/Content/MorrisJs/prettify.min.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("_Header")
+    @Html.Partial("_Ribbon")
+    <main role="main" class="container-fluid">
+        @RenderBody()
+    </main>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

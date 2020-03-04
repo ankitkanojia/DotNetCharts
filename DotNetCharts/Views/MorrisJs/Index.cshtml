@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_morrisjs.cshtml";
+}
+
+<div class="jumbotron" style="padding-bottom:1%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-success"><b>morris.js</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                <div>
+                    <a class="btn btn-success btn-sm" href="http://morrisjs.github.io/morris.js/index.html" target="_blank">OFFICIAL SITE</a>
+                    <a class="btn btn-danger btn-sm" href="http://morrisjs.github.io/morris.js/index.html" target="_blank">PRICE</a>
+                </div>
+                <p>
+                    It's easy to get started with Chart.js. All that's required is the script included in your page along with a single <canvas> node to render the chart.
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="text-danger">morris.js Library</h3>
+                <ul class="tree">
+                    <li><a target="_blank" href="@Url.Action("BarChart","MorrisJs")">Bar Chart</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
