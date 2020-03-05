@@ -8,7 +8,7 @@ namespace DotNetCharts.Controllers
 {
     public class MorrisJsController : Controller
     {
-        //Library Link : https://www.chartjs.org/docs/latest/getting-started/
+        //Library Link : https://morrisjs.github.io/morris.js/
 
         public ActionResult Index()
         {
@@ -16,6 +16,11 @@ namespace DotNetCharts.Controllers
         }
 
         public ActionResult BarChart()
+        {
+            return View();
+        }
+
+        public ActionResult LineChart()
         {
             return View();
         }
