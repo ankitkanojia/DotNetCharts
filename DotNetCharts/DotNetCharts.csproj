@@ -506,6 +506,7 @@
     <Content Include="Views\Shared\_morrisjs.cshtml" />
     <Content Include="Views\MorrisJs\BarChart.cshtml" />
     <Content Include="Views\MorrisJs\LineChart.cshtml" />
+    <Content Include="Views\MorrisJs\AreaChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
