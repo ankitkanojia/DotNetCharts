@@ -31,3 +31,9 @@ amCharts is a company based in Vilnius, Lithuania. The beginning of amCharts and
 - [Official Website](https://www.amcharts.com "Official Website")
 - [Licence](https://www.amcharts.com/online-store "Licence")
 
+### Highchart Chart    
+Highcharts is a charting library written in pure JavaScript, offering an easy way of adding interactive charts to your web site or web application. Highcharts currently supports line, spline, area, areaspline, column, bar, pie, scatter, angular gauges, arearange, areasplinerange, columnrange, bubble, box plot, error bars, funnel, waterfall and polar chart types.
+- [Official Website](https://www.highcharts.com "Official Website")
+- [Licence](https://shop.highsoft.com "Licence")
+
+
