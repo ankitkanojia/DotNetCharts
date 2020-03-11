@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Pie Chart";
+    Layout = "~/Views/Shared/_morrisjs.cshtml";
+}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Simple Pie Chart
+            </div>
+            <div class="card-body">
+                <div id="graph"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+   var pie_data = [
+        { label: 'Africa', value: 5 },
+        { label: 'Asia', value: 5 },
+        { label: 'Europe', value: 14 },
+        { label: 'North America', value: 3 },
+        { label: 'South America', value: 5 }
+    ];
+
+    Morris.Donut({
+        element: 'graph',
+        data: pie_data,
+        donutType: 'pie',
+        dataLabels: true,
+        animate: false
+    }).options.colors.forEach(function (color, a) {
+        if (pie_data[a] != undefined) {
+            var node = document.createElement('span');
+            node.innerHTML += '<span style="color:' + color + '"><i style="margin-left: 15px;" class="fas fa-square"></i> ' + pie_data[a].label + '</span>';
+            document.getElementById("chart_pie_3_legend").appendChild(node);
+        }
+    });
+</script>
