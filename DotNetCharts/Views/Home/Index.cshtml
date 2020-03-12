@@ -2,33 +2,42 @@
     ViewBag.Title = "CHART - HOME";
 }
 <div class="jumbotron" style="padding-bottom:1%">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>What is CHART?</h2>
-                <p>A chart is a graphical representation of data, in which "the data is represented by symbols, such as bars in a bar chart, lines in a line chart, or slices in a pie chart". A chart can represent tabular numeric data, functions or some kinds of qualitative structure and provides different info.</p>
-                <hr />
-                <div class="alert alert-warning" role="alert">
-                    <h4>Warning!</h4>
-                    All different chart library are not free, Privacy Policy & Terms&Conditions are very to each library, So please go though their official page and price page once before use. Repo is just for sample purpose so that you can able to develop those libraries in .NET MVC project.
-                </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>What is CHART?</h2>
+            <p>A chart is a graphical representation of data, in which "the data is represented by symbols, such as bars in a bar chart, lines in a line chart, or slices in a pie chart". A chart can represent tabular numeric data, functions or some kinds of qualitative structure and provides different info.</p>
+            <hr />
+            <div class="alert alert-warning" role="alert">
+                <h4>Warning!</h4>
+                All different chart library are not free, Privacy Policy & Terms&Conditions are very to each library, So please go though their official page and price page once before use. Repo is just for sample purpose so that you can able to develop those libraries in .NET MVC project.
             </div>
-            <div class="col-md-4">
-                <img class="w-100" src="~/Images/chart.jpg" alt=".NET chart" />
-            </div>
+        </div>
+        <div class="col-md-4 justify-content-center align-self-center">
+            <img class="w-100" src="~/Images/chart.jpg" alt=".NET chart" />
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="col-md-12">
+
+<div class="row">
+    <div class="col-md-3">
         <h3 class="text-danger">LIBRARIES</h3>
         <ul class="tree">
             <li><a target="_blank" href="@Url.Action("Index","FusionChart")">FusionChart</a></li>
             <li><a target="_blank" href="@Url.Action("Index","CanvasJsChart")">CanvasJsChart</a></li>
             <li><a target="_blank" href="@Url.Action("Index","amCharts")">amCharts</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3 class="text-danger">&nbsp;</h3>
+        <ul class="tree">
             <li><a target="_blank" href="@Url.Action("Index","HighChart")">HighChart</a></li>
             <li><a target="_blank" href="@Url.Action("Index","d3Chart")">d3Chart</a></li>
             <li><a target="_blank" href="@Url.Action("Index","ChartsJs")">Chart.js</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3 class="text-danger">&nbsp;</h3>
+        <ul class="tree">
             <li><a target="_blank" href="@Url.Action("Index","MorrisJs")">Morris.js</a></li>
         </ul>
     </div>
