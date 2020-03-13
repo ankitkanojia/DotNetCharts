@@ -44,6 +44,18 @@ D3.js is a JavaScript library for manipulating documents based on data. This gal
 - [Official Website](https://www.d3-graph-gallery.com "Official Website")
 
 
+### chartjs Chart    
+It's easy to get started with Chart.js. All that's required is the script included in your page along with a single node to render the chart. 
+
+- [Official Website](https://www.chartjs.org/ "Official Website")
+- [Licence](https://www.chartjs.org/docs/latest/notes/license.html "Licence")
 
 
+
+### Morris.js Chart    
+Morris.js is the library that powers the graphs on [howmanyleft](https://www.howmanyleft.co.uk "howmanyleft"). It's a very simple API for drawing line, bar, area and donut charts.
+
+- [Official Website](http://morrisjs.github.io/morris.js/index.html "Official Website")
+- [Licence](http://morrisjs.github.io/morris.js/index.html "Licence")
+- [GitHub](https://github.com/morrisjs/morris.js "GitHub")
 
