@@ -106,11 +106,6 @@ namespace DotNetCharts.Controllers
             return View();
         }
 
-        public ActionResult OrganizationChart()
-        {
-            return View();
-        }
-
         public ActionResult WordcloudChart()
         {
             return View();
