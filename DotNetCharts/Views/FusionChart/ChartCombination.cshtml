@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Chart.Js Charts";
+    Layout = "~/Views/Shared/_FusionChartLayout.cshtml";
+}
+
+<div class="row pt-3 px-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Bar Chart
+            </div>
+            <div class="card-body">
+                <div>@Html.Raw(ViewData["chartBar"])</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Column Chart
+            </div>
+            <div class="card-body">
+                <div>@Html.Raw(ViewData["chartColumn"])</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3 px-4 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Pie Chart
+            </div>
+            <div class="card-body">
+                <div>@Html.Raw(ViewData["chartPie"])</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Line Chart
+            </div>
+            <div class="card-body">
+                <div>@Html.Raw(ViewData["chartLine"])</div>
+            </div>
+        </div>
+    </div>
+</div>
