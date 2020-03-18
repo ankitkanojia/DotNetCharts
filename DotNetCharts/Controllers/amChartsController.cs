@@ -215,5 +215,10 @@ namespace DotNetCharts.Controllers
         {
             return View();
         }
+
+        public ActionResult ChartCombination()
+        {
+            return View();
+        }
     }
 }

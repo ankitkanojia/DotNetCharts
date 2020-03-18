@@ -514,6 +514,8 @@
     <Content Include="Views\amCharts\OHLCChart.cshtml" />
     <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
     <Content Include="Views\amCharts\VarianceIndicators.cshtml" />
+    <Content Include="Views\MorrisJs\ChartCombination.cshtml" />
+    <Content Include="Views\amCharts\ChartCombination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
