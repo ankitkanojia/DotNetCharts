@@ -514,6 +514,13 @@
     <Content Include="Views\amCharts\OHLCChart.cshtml" />
     <Content Include="Views\amCharts\StadiumTrackChart.cshtml" />
     <Content Include="Views\amCharts\VarianceIndicators.cshtml" />
+    <Content Include="Views\MorrisJs\ChartCombination.cshtml" />
+    <Content Include="Views\amCharts\ChartCombination.cshtml" />
+    <Content Include="Views\CanvasJsChart\ChartCombination.cshtml" />
+    <Content Include="Views\ChartsJs\ChartCombination.cshtml" />
+    <Content Include="Views\d3Chart\ChartCombination.cshtml" />
+    <Content Include="Views\FusionChart\ChartCombination.cshtml" />
+    <Content Include="Views\HighChart\ChartCombination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

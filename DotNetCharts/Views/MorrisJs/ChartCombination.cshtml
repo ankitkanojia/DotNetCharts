@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Morris.js Charts";
+    Layout = "~/Views/Shared/_morrisjs.cshtml";
+}
+
+<div class="row pt-3 px-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Bar Chart
+            </div>
+            <div class="card-body">
+                <div id="graphBar" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+               Area Chart
+            </div>
+            <div class="card-body">
+                <div id="graphArea" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3 px-4 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Donut Chart
+            </div>
+            <div class="card-body">
+                <div id="graphDonut" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Line Chart
+            </div>
+            <div class="card-body">
+                <div id="graphLine" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Morris.Area({
+        element: 'graphArea',
+        data: [
+            { y: '2006', a: 100, b: 90 },
+            { y: '2007', a: 75, b: 65 },
+            { y: '2008', a: 50, b: 40 },
+            { y: '2009', a: 75, b: 65 },
+            { y: '2010', a: 50, b: 40 },
+            { y: '2011', a: 75, b: 65 },
+            { y: '2012', a: 100, b: 90 }
+        ],
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['Series A', 'Series B']
+    });
+
+    Morris.Donut({
+        element: 'graphDonut',
+        data: [
+            { label: "Download Sales", value: 12 },
+            { label: "In-Store Sales", value: 30 },
+            { label: "Mail-Order Sales", value: 20 }
+        ]
+    });
+
+    Morris.Bar({
+        element: 'graphBar',
+        data: [
+            { x: '2011 Q1', y: 3, z: 2, a: 3 },
+            { x: '2011 Q2', y: 2, z: null, a: 1 },
+            { x: '2011 Q3', y: 0, z: 2, a: 4 },
+            { x: '2011 Q4', y: 2, z: 4, a: 3 }
+        ],
+        xkey: 'x',
+        ykeys: ['y', 'z', 'a'],
+        labels: ['Y', 'Z', 'A']
+    }).on('click', function (i, row) {
+        console.log(i, row);
+    });
+
+    Morris.Line({
+        element: 'graphLine',
+        data: [
+            { y: '2006', a: 100, b: 90 },
+            { y: '2007', a: 75, b: 65 },
+            { y: '2008', a: 50, b: 40 },
+            { y: '2009', a: 75, b: 65 },
+            { y: '2010', a: 50, b: 40 },
+            { y: '2011', a: 75, b: 65 },
+            { y: '2012', a: 100, b: 90 }
+        ],
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['Series A', 'Series B']
+    });
+</script>

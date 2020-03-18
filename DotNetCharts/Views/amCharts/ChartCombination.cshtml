@@ -1,0 +1,1030 @@
+﻿@{
+    ViewBag.Title = "amcharts Charts";
+    Layout = "~/Views/Shared/_amChartLayout.cshtml";
+}
+
+<div class="row pt-3 px-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Column Chart
+            </div>
+            <div class="card-body">
+                <div id="chartColumn" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Area Chart
+            </div>
+            <div class="card-body">
+                <div id="chartArea" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3 px-4 mb-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Donut Chart
+            </div>
+            <div class="card-body">
+                <div id="chartTree" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Line Chart
+            </div>
+            <div class="card-body">
+                <div id="chartLine" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartColumn", am4charts.XYChart);
+        chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+        chart.data = [
+            {
+                country: "USA",
+                visits: 23725
+            },
+            {
+                country: "China",
+                visits: 1882
+            },
+            {
+                country: "Japan",
+                visits: 1809
+            },
+            {
+                country: "Germany",
+                visits: 1322
+            },
+            {
+                country: "UK",
+                visits: 1122
+            },
+            {
+                country: "France",
+                visits: 1114
+            },
+            {
+                country: "India",
+                visits: 984
+            },
+            {
+                country: "Spain",
+                visits: 711
+            },
+            {
+                country: "Netherlands",
+                visits: 665
+            },
+            {
+                country: "Russia",
+                visits: 580
+            },
+            {
+                country: "South Korea",
+                visits: 443
+            },
+            {
+                country: "Canada",
+                visits: 441
+            }
+        ];
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.dataFields.category = "country";
+        categoryAxis.renderer.minGridDistance = 40;
+        categoryAxis.fontSize = 11;
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.min = 0;
+        valueAxis.max = 24000;
+        valueAxis.strictMinMax = true;
+        valueAxis.renderer.minGridDistance = 30;
+        // axis break
+        var axisBreak = valueAxis.axisBreaks.create();
+        axisBreak.startValue = 2100;
+        axisBreak.endValue = 22900;
+        //axisBreak.breakSize = 0.005;
+
+        // fixed axis break
+        var d = (axisBreak.endValue - axisBreak.startValue) / (valueAxis.max - valueAxis.min);
+        axisBreak.breakSize = 0.05 * (1 - d) / d; // 0.05 means that the break will take 5% of the total value axis height
+
+        // make break expand on hover
+        var hoverState = axisBreak.states.create("hover");
+        hoverState.properties.breakSize = 1;
+        hoverState.properties.opacity = 0.1;
+        hoverState.transitionDuration = 1500;
+
+        axisBreak.defaultState.transitionDuration = 1000;
+        /*
+        // this is exactly the same, but with events
+        axisBreak.events.on("over", function() {
+          axisBreak.animate(
+            [{ property: "breakSize", to: 1 }, { property: "opacity", to: 0.1 }],
+            1500,
+            am4core.ease.sinOut
+          );
+        });
+        axisBreak.events.on("out", function() {
+          axisBreak.animate(
+            [{ property: "breakSize", to: 0.005 }, { property: "opacity", to: 1 }],
+            1000,
+            am4core.ease.quadOut
+          );
+        });*/
+
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.categoryX = "country";
+        series.dataFields.valueY = "visits";
+        series.columns.template.tooltipText = "{valueY.value}";
+        series.columns.template.tooltipY = 0;
+        series.columns.template.strokeOpacity = 0;
+
+        // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+        series.columns.template.adapter.add("fill", function (fill, target) {
+            return chart.colors.getIndex(target.dataItem.index);
+        });
+
+    });
+
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart
+        var chart = am4core.create("chartArea", am4charts.XYChart);
+        chart.paddingRight = 20;
+
+        chart.data = generateChartData();
+
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.baseInterval = {
+            "timeUnit": "minute",
+            "count": 1
+        };
+        dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.tooltip.disabled = true;
+        valueAxis.title.text = "Unique visitors";
+
+        var series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.dateX = "date";
+        series.dataFields.valueY = "visits";
+        series.tooltipText = "Visits: [bold]{valueY}[/]";
+        series.fillOpacity = 0.3;
+
+
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.lineY.opacity = 0;
+        chart.scrollbarX = new am4charts.XYChartScrollbar();
+        chart.scrollbarX.series.push(series);
+
+
+        dateAxis.start = 0.8;
+        dateAxis.keepSelection = true;
+
+
+
+        function generateChartData() {
+            var chartData = [];
+            // current date
+            var firstDate = new Date();
+            // now set 500 minutes back
+            firstDate.setMinutes(firstDate.getDate() - 500);
+
+            // and generate 500 data items
+            var visits = 500;
+            for (var i = 0; i < 500; i++) {
+                var newDate = new Date(firstDate);
+                // each time we add one minute
+                newDate.setMinutes(newDate.getMinutes() + i);
+                // some random number
+                visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+                // add data item to the array
+                chartData.push({
+                    date: newDate,
+                    visits: visits
+                });
+            }
+            return chartData;
+        }
+
+    });
+
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var data = {
+            "type": [
+                {
+                    "name": "Sun",
+                    "id": "ao1",
+                    "color": "rgb(255, 208, 0)",
+                    "children": [
+                        {
+                            "name": "equation of time",
+                            "id": "tt1",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion solar tropical longitude",
+                            "id": "tt2",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion solar sideral longitude",
+                            "id": "tt3",
+                            "count": 2,
+                        }, {
+                            "name": "equation of the sun",
+                            "id": "tt4",
+                            "count": 19,
+                        }
+                    ]
+                }, {
+                    "name": "Trigonometrical",
+                    "id": "ao11",
+                    "color": "rgb(87,199,133)",
+                    "children": [
+                        {
+                            "name": "chords",
+                            "id": "tt5",
+                            "count": 1,
+                        }, {
+                            "name": "sine",
+                            "id": "tt6",
+                            "count": 14,
+                        }, {
+                            "name": "shadow",
+                            "id": "tt7",
+                            "count": 1,
+                        }, {
+                            "name": "cosine",
+                            "id": "tt67",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Spherical astronomical",
+                    "id": "ao8",
+                    "color": "rgb(191, 19, 102)",
+                    "children": [
+                        {
+                            "name": "declination",
+                            "id": "tt8",
+                            "count": 1,
+                        }, {
+                            "name": "right ascension",
+                            "id": "tt9",
+                            "count": 1,
+                        }, {
+                            "name": "oblique ascension",
+                            "id": "tt10",
+                            "count": 1,
+                        }, {
+                            "name": "ascensional difference",
+                            "id": "tt11",
+                            "count": 1,
+                        }, {
+                            "name": "length of diurnal seasonal hour",
+                            "id": "tt12",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Eighth sphere",
+                    "id": "ao9",
+                    "color": "rgb(143, 0, 138)",
+                    "children": [
+                        {
+                            "name": "mean motion access and recess",
+                            "id": "tt13",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion apogees and stars",
+                            "id": "tt14",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion solar apogee",
+                            "id": "tt17",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion precession",
+                            "id": "tt18",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Eclipse",
+                    "id": "ao10",
+                    "color": "rgb(68, 59, 255)",
+                    "children": [
+                        {
+                            "name": "syzygies",
+                            "id": "tt19",
+                            "count": 1,
+                        }, {
+                            "name": "solar velocities",
+                            "id": "tt20",
+                            "count": 9,
+                        }, {
+                            "name": "lunar velocities",
+                            "id": "tt23",
+                            "count": 14,
+                        }, {
+                            "name": "parallax",
+                            "id": "tt24",
+                            "count": 2,
+                        }
+                    ]
+                }, {
+                    "name": "Mercury",
+                    "id": "ao2",
+                    "color": "rgb(194, 214, 60)",
+                    "children": [
+                        {
+                            "name": "mean motion anomaly Mercury",
+                            "id": "tt25",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mercury center",
+                            "id": "tt26",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mercury anomaly at mean distance",
+                            "id": "tt27",
+                            "count": 1,
+                        }, {
+                            "name": "total equation double-argument table Mercury",
+                            "id": "tt28",
+                            "count": 1,
+                        }, {
+                            "name": "Mercury latitude",
+                            "id": "tt29",
+                            "count": 1,
+                        }, {
+                            "name": "planetary Stations Mercury",
+                            "id": "tt30",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mercury anomaly at maximum distance",
+                            "id": "tt72",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mercury anomaly at minimum distance",
+                            "id": "tt73",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Venus",
+                    "id": "ao3",
+                    "color": "rgb(64, 204, 207)",
+                    "children": [
+                        {
+                            "name": "mean motion anomaly Venus",
+                            "id": "tt31",
+                            "count": 1,
+                        }, {
+                            "name": "equation Venus center",
+                            "id": "tt32",
+                            "count": 1,
+                        }, {
+                            "name": "equation Venus anomaly at mean distance",
+                            "id": "tt33",
+                            "count": 1,
+                        }, {
+                            "name": "total equation double-argument table Venus",
+                            "id": "tt34",
+                            "count": 1,
+                        }, {
+                            "name": "Venus latitude",
+                            "id": "tt35",
+                            "count": 1,
+                        }, {
+                            "name": "planetary stations Venus",
+                            "id": "tt36",
+                            "count": 1,
+                        }, {
+                            "name": "equation Venus anomaly at maximum distance",
+                            "id": "tt76",
+                            "count": 1,
+                        }, {
+                            "name": "equation Venus anomaly at minimum distance",
+                            "id": "tt77",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Moon",
+                    "id": "ao4",
+                    "color": "rgb(44, 171, 230)",
+                    "children": [
+                        {
+                            "name": "mean motion lunar longitude",
+                            "id": "tt37",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion lunar anomaly",
+                            "id": "tt38",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion lunar node",
+                            "id": "tt42",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion longitude plus lunar node",
+                            "id": "tt43",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion lunar elongation",
+                            "id": "tt44",
+                            "count": 1,
+                        }, {
+                            "name": "mean motion double elongation",
+                            "id": "tt45",
+                            "count": 1,
+                        }, {
+                            "name": "equation Moon center",
+                            "id": "tt46",
+                            "count": 1,
+                        }, {
+                            "name": "equation Moon anomaly",
+                            "id": "tt47",
+                            "count": 8,
+                        }, {
+                            "name": "lunar latitude",
+                            "id": "tt48",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Mars",
+                    "id": "ao5",
+                    "color": "rgb(199,0,41)",
+                    "children": [
+                        {
+                            "name": "mean motion longitude Mars",
+                            "id": "tt49",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mars center",
+                            "id": "tt50",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mars anomaly at mean distance",
+                            "id": "tt51",
+                            "count": 1,
+                        }, {
+                            "name": "total equation double-argument table Mars",
+                            "id": "tt52",
+                            "count": 1,
+                        }, {
+                            "name": "Mars latitude",
+                            "id": "tt53",
+                            "count": 1,
+                        }, {
+                            "name": "planetary stations Mars",
+                            "id": "tt54",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mars anomaly at maximum distance",
+                            "id": "tt70",
+                            "count": 1,
+                        }, {
+                            "name": "equation Mars anomaly at minimum distance",
+                            "id": "tt71",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Jupiter",
+                    "id": "ao6",
+                    "color": "rgb(255,87,51)",
+                    "children": [
+                        {
+                            "name": "mean motion longitude Jupiter",
+                            "id": "tt55",
+                            "count": 1,
+                        }, {
+                            "name": "equation Jupiter center",
+                            "id": "tt56",
+                            "count": 1,
+                        }, {
+                            "name": "equation Jupiter anomaly at mean distance",
+                            "id": "tt57",
+                            "count": 1,
+                        }, {
+                            "name": "total equation double-argument table Jupiter",
+                            "id": "tt58",
+                            "count": 1,
+                        }, {
+                            "name": "Jupiter latitude",
+                            "id": "tt59",
+                            "count": 1,
+                        }, {
+                            "name": "planetary stations Jupiter",
+                            "id": "tt60",
+                            "count": 1,
+                        }, {
+                            "name": "equation Jupiter anomaly at maximum distance",
+                            "id": "tt68",
+                            "count": 1,
+                        }, {
+                            "name": "equation Jupiter anomaly at minimum distance",
+                            "id": "tt69",
+                            "count": 1,
+                        }
+                    ]
+                }, {
+                    "name": "Saturn",
+                    "id": "ao7",
+                    "color": "rgb(230, 171, 34)",
+                    "children": [
+                        {
+                            "name": "mean motion longitude Saturn",
+                            "id": "tt61",
+                            "count": 1,
+                        }, {
+                            "name": "equation Saturn center",
+                            "id": "tt62",
+                            "count": 1,
+                        }, {
+                            "name": "equation Saturn anomaly at mean distance",
+                            "id": "tt63",
+                            "count": 1,
+                        }, {
+                            "name": "total equation double-argument table Saturn",
+                            "id": "tt64",
+                            "count": 1,
+                        }, {
+                            "name": "Saturn latitude",
+                            "id": "tt65",
+                            "count": 1,
+                        }, {
+                            "name": "planetary stations Saturn",
+                            "id": "tt66",
+                            "count": 2,
+                        }, {
+                            "name": "equation Saturn anomaly at maximum distance",
+                            "id": "tt74",
+                            "count": 1,
+                        }, {
+                            "name": "equation Saturn anomaly at minimum distance",
+                            "id": "tt75",
+                            "count": 1,
+                        }
+                    ]
+                }
+            ],
+            "param": [
+                {
+                    "name": "Sun",
+                    "id": "ao1",
+                    "color": "rgb(255, 208, 0)",
+                    "children": [
+                        {
+                            "name": "equation of time",
+                            "id": "tt1",
+                            "count": 1,
+                            "children": [
+                                {
+                                    "name": "06",
+                                    "id": "ap20",
+                                    "count": 1,
+                                }
+                            ]
+                        }, {
+                            "name": "equation of the sun",
+                            "id": "tt4",
+                            "count": 16,
+                            "children": [
+                                {
+                                    "name": "2 ; 10",
+                                    "id": "ap5",
+                                    "count": 8,
+                                },
+                                {
+                                    "name": "1 ; 59,10 | 02 ; 04,45",
+                                    "id": "ap6",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "02,01",
+                                    "id": "ap12",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "02 | 20.",
+                                    "id": "ap13",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "null",
+                                    "id": "ap14",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "12",
+                                    "id": "ap15",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "12",
+                                    "id": "ap16",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "01 | 12",
+                                    "id": "ap17",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "02 | 12",
+                                    "id": "ap18",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "12",
+                                    "id": "ap19",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "01",
+                                    "id": "ap21",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "02 ; 01",
+                                    "id": "ap22",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "07",
+                                    "id": "ap23",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "01 | 07",
+                                    "id": "ap24",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "01,18",
+                                    "id": "ap26",
+                                    "count": 1,
+                                },
+                                {
+                                    "name": "16,39",
+                                    "id": "ap27",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "name": "Trigonometrical",
+                    "id": "ao11",
+                    "color": "rgb(87,199,133)",
+                    "children": [
+                        {
+                            "name": "sine",
+                            "id": "tt6",
+                            "count": 2,
+                            "children": [
+                                {
+                                    "name": "01,00",
+                                    "id": "ap3",
+                                    "count": 7,
+                                },
+                                {
+                                    "name": "12",
+                                    "id": "ap25",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "name": "Spherical astronomical",
+                    "id": "ao8",
+                    "color": "rgb(191, 19, 102)",
+                    "children": [
+                        {
+                            "name": "declination",
+                            "id": "tt8",
+                            "count": 1,
+                            "children": [
+                                {
+                                    "name": "23 ; 35",
+                                    "id": "ap4",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "name": "Eclipse",
+                    "id": "ao10",
+                    "color": "rgb(68, 59, 255)",
+                    "children": [
+                        {
+                            "name": "solar velocities",
+                            "id": "tt20",
+                            "count": 1,
+                            "children": [
+                                {
+                                    "name": "00 ; 02,23 | 00 ; 02,33",
+                                    "id": "ap10",
+                                    "count": 8,
+                                }
+                            ]
+                        }, {
+                            "name": "lunar velocities",
+                            "id": "tt23",
+                            "count": 2,
+                            "children": [
+                                {
+                                    "name": "00 ; 30,18 | 00 ; 36,04",
+                                    "id": "ap9",
+                                    "count": 12,
+                                },
+                                {
+                                    "name": "12",
+                                    "id": "ap11",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "name": "Venus",
+                    "id": "ao3",
+                    "color": "rgb(64, 204, 207)",
+                    "children": [
+                        {
+                            "name": "equation Venus center",
+                            "id": "tt32",
+                            "count": 1,
+                            "children": [
+                                {
+                                    "name": "12",
+                                    "id": "ap28",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "name": "Moon",
+                    "id": "ao4",
+                    "color": "rgb(44, 171, 230)",
+                    "children": [
+                        {
+                            "name": "equation Moon anomaly",
+                            "id": "tt47",
+                            "count": 2,
+                            "children": [
+                                {
+                                    "name": "4 ; 56",
+                                    "id": "ap7",
+                                    "count": 8,
+                                },
+                                {
+                                    "name": "5 ; 10",
+                                    "id": "ap8",
+                                    "count": 1,
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        String.prototype.toPascalCase = function () {
+            return this.match(/[a-z]+/gi)
+                .map(function (word) {
+                    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+                }).join('');
+        };
+
+        // create chart
+        var container = am4core.create("chartTree", am4core.Container);
+        container.width = am4core.percent(100);
+        container.height = am4core.percent(100);
+        container.layout = "vertical";
+
+        var chart1 = container.createChild(am4charts.TreeMap);
+        var chart2 = container.createChild(am4charts.TreeMap);
+        chart1.data = data.type;
+        chart2.data = data.param;
+
+        chart1.padding(0, 0, 0, 0);
+        chart2.padding(15, 0, 0, 0);
+
+        chart1.height = am4core.percent(65);
+        chart2.height = am4core.percent(35);
+
+        var chartConfig = (chart, astroSeries = []) => {
+            // only one level visible initially
+            chart.maxLevels = 1;
+            // define data fields
+            chart.dataFields.value = "count";
+            chart.dataFields.name = "name";
+            chart.dataFields.children = "children";
+            chart.dataFields.color = "color";
+
+            // astronomical object series template
+            var astroObjectSeries = chart.seriesTemplates.create("0");
+            astroObjectSeries.strokeWidth = 2;
+            var astroObjectTemplate = astroObjectSeries.columns.template;
+
+            astroSeries.push(astroObjectSeries);
+
+            // add picto
+            var image = astroObjectTemplate.createChild(am4core.Image);
+            image.opacity = 0.15;
+            image.align = "center";
+            image.valign = "middle";
+            image.width = am4core.percent(80);
+            image.height = am4core.percent(80);
+
+            // add adapter for href to load correct image
+            image.adapter.add("href", function (href, target) {
+                var dataItem = target.parent.dataItem;
+                if (dataItem) {
+                    var astroObjectName = dataItem.treeMapDataItem.name.toPascalCase();
+                    return `https://raw.githubusercontent.com/Segolene-Albouy/Memoire-TNAH2019/master/Images/Astronomical-objects/${astroObjectName}.png`;
+                }
+            });
+
+            var tableTypeSeries = chart.seriesTemplates.create("1");
+            tableTypeSeries.columns.template.fillOpacity = 0;
+
+            var tableTypeBullet = tableTypeSeries.bullets.push(new am4charts.LabelBullet());
+            tableTypeBullet.locationX = 0.5;
+            tableTypeBullet.locationY = 0.5;
+            tableTypeBullet.label.text = "{name}";
+            tableTypeBullet.label.fill = am4core.color("#ffffff");
+
+            // deepest series template (either parameter sets or original items)
+            var paramSeries = chart.seriesTemplates.create("2");
+            paramSeries.columns.template.fillOpacity = 0;
+
+            var paramBullet = paramSeries.bullets.push(new am4charts.LabelBullet());
+            paramBullet.locationX = 0.5;
+            paramBullet.locationY = 0.5;
+            paramBullet.label.text = "[font-size: 16px; bold]{name}[/]\n{value} edition(s)";
+
+            return astroSeries;
+        }
+
+        var astroSeries = chartConfig(chart1);
+        astroSeries = chartConfig(chart2, astroSeries);
+
+        astroSeries[0].columns.template.events.on("hit", (ev) => {
+            chart2.dataItems.each(function (dataItem) {
+                if (dataItem.name == ev.target.dataItem.dataContext.name) {
+                    chart2.zoomToChartDataItem(dataItem);
+                }
+            })
+        });
+
+        astroSeries[1].columns.template.events.on("hit", (ev) => {
+            chart1.dataItems.each(function (dataItem) {
+                if (dataItem.name == ev.target.dataItem.dataContext.name) {
+                    chart1.zoomToChartDataItem(dataItem);
+                }
+            })
+        });
+
+        chart1.zoomOutButton.events.on("hit", function () {
+            chart2.zoomToChartDataItem(chart2.homeDataItem);
+        })
+
+        chart2.zoomOutButton.events.on("hit", function () {
+            chart1.zoomToChartDataItem(chart1.homeDataItem);
+        })
+
+    });
+
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("chartLine", am4charts.XYChart);
+
+        // Create axes
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+        for (var i = 0; i < 10; i++) {
+            createSeries("value" + i, "Series #" + i);
+        }
+
+        // Create series
+        function createSeries(s, name) {
+            var series = chart.series.push(new am4charts.LineSeries());
+            series.dataFields.valueY = "value" + s;
+            series.dataFields.dateX = "date";
+            series.name = name;
+
+            var segment = series.segments.template;
+            segment.interactionsEnabled = true;
+
+            var hoverState = segment.states.create("hover");
+            hoverState.properties.strokeWidth = 3;
+
+            var dimmed = segment.states.create("dimmed");
+            dimmed.properties.stroke = am4core.color("#dadada");
+
+            segment.events.on("over", function (event) {
+                processOver(event.target.parent.parent.parent);
+            });
+
+            segment.events.on("out", function (event) {
+                processOut(event.target.parent.parent.parent);
+            });
+
+            var data = [];
+            var value = Math.round(Math.random() * 100) + 100;
+            for (var i = 1; i < 100; i++) {
+                value += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 30 + i / 5);
+                var dataItem = { date: new Date(2018, 0, i) };
+                dataItem["value" + s] = value;
+                data.push(dataItem);
+            }
+
+            series.data = data;
+            return series;
+        }
+
+        chart.legend = new am4charts.Legend();
+        chart.legend.position = "right";
+        chart.legend.scrollable = true;
+        chart.legend.itemContainers.template.events.on("over", function (event) {
+            processOver(event.target.dataItem.dataContext);
+        })
+
+        chart.legend.itemContainers.template.events.on("out", function (event) {
+            processOut(event.target.dataItem.dataContext);
+        })
+
+        function processOver(hoveredSeries) {
+            hoveredSeries.toFront();
+
+            hoveredSeries.segments.each(function (segment) {
+                segment.setState("hover");
+            })
+
+            chart.series.each(function (series) {
+                if (series != hoveredSeries) {
+                    series.segments.each(function (segment) {
+                        segment.setState("dimmed");
+                    })
+                    series.bulletsContainer.setState("dimmed");
+                }
+            });
+        }
+
+        function processOut(hoveredSeries) {
+            chart.series.each(function (series) {
+                series.segments.each(function (segment) {
+                    segment.setState("default");
+                })
+                series.bulletsContainer.setState("default");
+            });
+        }
+
+    });
+</script>
