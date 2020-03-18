@@ -3,8 +3,7 @@
     Layout = "~/Views/Shared/_chartjs.cshtml";
 }
 
-<div class="jumbotron" style="padding-bottom:1%">
-    <div class="container">
+<div class="jumbotron" style="padding-bottom:1%;padding-top:1%">
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-success"><b>chartjs Chart</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
@@ -18,25 +17,23 @@
             </div>
         </div>
     </div>
-</div>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <h3 class="text-danger">Chart List</h3>
         <ul class="tree">
-            <li><a target="_blank" href="@Url.Action("ColumnChart","amCharts")">Column Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("BarChart","amCharts")">Bar Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("RadarChart","amCharts")">Radar Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("AreaChart","amCharts")">Area Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("PolarChart","amCharts")">Polar Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("BarChart","ChartsJs")">Bar Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("RadarChart","ChartsJs")">Radar Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("AreaChart","ChartsJs")">Area Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("PolarChart","ChartsJs")">Polar Chart</a></li>
         </ul>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <h3 class="text-danger">&nbsp;</h3>
         <ul class="tree">
-            <li><a target="_blank" href="@Url.Action("BubbleChart","amCharts")">Bubble Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("DoughnutChart","amCharts")">Doughnut Chart</a></li>
-            <li><a target="_blank" href="@Url.Action("MixedChart","amCharts")">Mixed Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("BubbleChart","ChartsJs")">Bubble Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("DoughnutChart","ChartsJs")">Doughnut Chart</a></li>
+            <li><a target="_blank" href="@Url.Action("MixedChart","ChartsJs")">Mixed Chart</a></li>
         </ul>
     </div>
 </div>

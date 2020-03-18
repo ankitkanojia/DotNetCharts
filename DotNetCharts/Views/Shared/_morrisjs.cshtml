@@ -18,9 +18,9 @@
 <body>
     @Html.Partial("_Header")
     @Html.Partial("_Ribbon")
-    <main class="container">
+    <div class="container-fluid">
         @RenderBody()
-    </main>
+    </div>
     @RenderSection("scripts", required: false)
 </body>
 </html>
