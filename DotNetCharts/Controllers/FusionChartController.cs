@@ -16,35 +16,6 @@ namespace DotNetCharts.Controllers
 
         public ActionResult BarChart()
         {
-            // This page demonstrates the ease of generating charts using FusionCharts.
-            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
-            // Ideally, you would NOT use a physical data file. Instead you'll have
-            // your own ASP.NET scripts virtually relay the XML data document.
-            // FusionCharts supports various data format, please comment the code for
-            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
-            // For a head-start, we've kept this example very simple.
-
-            // Create the chart - bar2d Chart with data from Data/Data.xml
-            Chart sales = new Chart();
-
-            // Setting chart id
-            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
-
-            // Setting chart type to bar2d chart
-            sales.SetChartParameter(Chart.ChartParameter.chartType, "bar2d");
-
-            // Setting chart width to 600px
-            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
-
-            // Setting chart height to 350px
-            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
-
-            // Setting chart data as JSON String (Uncomment below line
-            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Lead sources by industry\",\n    \"yaxisname\": \"Number of Leads\",\n    \"aligncaptionwithcanvas\": \"0\",\n    \"plottooltext\": \"<b>$dataValue</b> leads received\",\n    \"theme\": \"fusion\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Travel & Leisure\",\n      \"value\": \"41\"\n    },\n    {\n      \"label\": \"Advertising/Marketing/PR\",\n      \"value\": \"39\"\n    },\n    {\n      \"label\": \"Other\",\n      \"value\": \"38\"\n    },\n    {\n      \"label\": \"Real Estate\",\n      \"value\": \"32\"\n    },\n    {\n      \"label\": \"Communications/Cable/Phone\",\n      \"value\": \"26\"\n    },\n    {\n      \"label\": \"Construction\",\n      \"value\": \"25\"\n    },\n    {\n      \"label\": \"Entertainment\",\n      \"value\": \"25\"\n    },\n    {\n      \"label\": \"Staffing Firm/Full Time/Temporary\",\n      \"value\": \"24\"\n    },\n    {\n      \"label\": \"Transportation/Logistics\",\n      \"value\": \"23\"\n    },\n    {\n      \"label\": \"Utilities\",\n      \"value\": \"22\"\n    },\n    {\n      \"label\": \"Aerospace/Defense Products\",\n      \"value\": \"18\"\n    },\n    {\n      \"label\": \"Banking/Finance/Securities\",\n      \"value\": \"16\"\n    },\n    {\n      \"label\": \"Consumer Products - Non-Durables\",\n      \"value\": \"15\"\n    },\n    {\n      \"label\": \"Distribution\",\n      \"value\": \"13\"\n    },\n    {\n      \"label\": \"Education\",\n      \"value\": \"12\"\n    },\n    {\n      \"label\": \"Health Products & Services\",\n      \"value\": \"11\"\n    },\n    {\n      \"label\": \"Hospitality & Hotels\",\n      \"value\": \"10\"\n    },\n    {\n      \"label\": \"Non-Business/Residential\",\n      \"value\": \"6\"\n    },\n    {\n      \"label\": \"Pharmaceutical\",\n      \"value\": \"4\"\n    },\n    {\n      \"label\": \"Printing & Publishing\",\n      \"value\": \"1\"\n    },\n    {\n      \"label\": \"Professional Services\",\n      \"value\": \"1\"\n    },\n    {\n      \"label\": \"VAR/ISV\",\n      \"value\": \"1\"\n    },\n    {\n      \"label\": \"Warranty Administrators\",\n      \"value\": \"1\"\n    }\n  ]\n}", Chart.DataFormat.json);
-
-            ViewData["Chart"] = sales.Render();
-
-            // Return the view
             return View();
         }
 
