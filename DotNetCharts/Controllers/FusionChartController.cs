@@ -21,35 +21,6 @@ namespace DotNetCharts.Controllers
 
         public ActionResult ColumnChart()
         {
-            // This page demonstrates the ease of generating charts using FusionCharts.
-            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
-            // Ideally, you would NOT use a physical data file. Instead you'll have
-            // your own ASP.NET scripts virtually relay the XML data document.
-            // FusionCharts supports various data format, please comment the code for
-            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
-            // For a head-start, we've kept this example very simple.
-
-            // Create the chart - column2d Chart with data from Data/Data.xml
-            Chart sales = new Chart();
-
-            // Setting chart id
-            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
-
-            // Setting chart type to column2d chart
-            sales.SetChartParameter(Chart.ChartParameter.chartType, "column2d");
-
-            // Setting chart width to 600px
-            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
-
-            // Setting chart height to 350px
-            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
-
-            // Setting chart data as JSON String (Uncomment below line
-            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Countries With Most Oil Reserves [2017-18]\",\n    \"subcaption\": \"In MMbbl = One Million barrels\",\n    \"xaxisname\": \"Country\",\n    \"yaxisname\": \"Reserves (MMbbl)\",\n    \"numbersuffix\": \"K\",\n    \"theme\": \"fusion\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Venezuela\",\n      \"value\": \"290\"\n    },\n    {\n      \"label\": \"Saudi\",\n      \"value\": \"260\"\n    },\n    {\n      \"label\": \"Canada\",\n      \"value\": \"180\"\n    },\n    {\n      \"label\": \"Iran\",\n      \"value\": \"140\"\n    },\n    {\n      \"label\": \"Russia\",\n      \"value\": \"115\"\n    },\n    {\n      \"label\": \"UAE\",\n      \"value\": \"100\"\n    },\n    {\n      \"label\": \"US\",\n      \"value\": \"30\"\n    },\n    {\n      \"label\": \"China\",\n      \"value\": \"30\"\n    }\n  ]\n}", Chart.DataFormat.json);
-
-            ViewData["Chart"] = sales.Render();
-
-            // Return the view
             return View();
         }
 
