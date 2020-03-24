@@ -3,15 +3,74 @@
     Layout = "~/Views/Shared/_FusionChartLayout.cshtml";
 }
 
-<div  class="row pt-3 px-4">
+
+<div class="row pt-3 px-4">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                Simple Column Chart
+                Simple Bar Chart
             </div>
             <div class="card-body">
-                <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+                <div id="chart-container" style="height:500px"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const dataSource = {
+        chart: {
+            caption: "Countries With Most Oil Reserves [2017-18]",
+            subcaption: "In MMbbl = One Million barrels",
+            xaxisname: "Country",
+            yaxisname: "Reserves (MMbbl)",
+            numbersuffix: "K",
+            theme: "fusion"
+        },
+        data: [
+            {
+                label: "Venezuela",
+                value: "290"
+            },
+            {
+                label: "Saudi",
+                value: "260"
+            },
+            {
+                label: "Canada",
+                value: "180"
+            },
+            {
+                label: "Iran",
+                value: "140"
+            },
+            {
+                label: "Russia",
+                value: "115"
+            },
+            {
+                label: "UAE",
+                value: "100"
+            },
+            {
+                label: "US",
+                value: "30"
+            },
+            {
+                label: "China",
+                value: "30"
+            }
+        ]
+    };
+
+    FusionCharts.ready(function () {
+        var myChart = new FusionCharts({
+            type: "column2d",
+            renderAt: "chart-container",
+            width: "100%",
+            height: "100%",
+            dataFormat: "json",
+            dataSource
+        }).render();
+    });
+</script>
