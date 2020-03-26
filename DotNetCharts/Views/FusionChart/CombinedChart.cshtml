@@ -3,15 +3,114 @@
     Layout = "~/Views/Shared/_FusionChartLayout.cshtml";
 }
 
-<div  class="row pt-3 px-4">
+<div class="row pt-3 px-4">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
                 Simple Combined Chart
             </div>
             <div class="card-body">
-                <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+                <div id="chart-container" style="height:500px"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const dataSource = {
+        chart: {
+            caption: "Expense Analysis",
+            subcaption: "ACME Inc.",
+            xaxisname: "Region",
+            yaxisname: "Amount (In USD)",
+            numberprefix: "$",
+            exportenabled: "1",
+            theme: "fusion"
+        },
+        categories: [
+            {
+                category: [
+                    {
+                        label: "East"
+                    },
+                    {
+                        label: "West"
+                    },
+                    {
+                        label: "South"
+                    },
+                    {
+                        label: "North"
+                    }
+                ]
+            }
+        ],
+        dataset: [
+            {
+                seriesname: "Actual Expenses",
+                data: [
+                    {
+                        value: "1441290"
+                    },
+                    {
+                        value: "855912"
+                    },
+                    {
+                        value: "911404"
+                    },
+                    {
+                        value: "648136"
+                    }
+                ]
+            },
+            {
+                seriesname: "Budgeted Expenses",
+                renderas: "line",
+                data: [
+                    {
+                        value: "1297430"
+                    },
+                    {
+                        value: "776485"
+                    },
+                    {
+                        value: "685352"
+                    },
+                    {
+                        value: "726791"
+                    }
+                ]
+            },
+            {
+                seriesname: "Unknown liabilities",
+                renderas: "area",
+                showanchors: "0",
+                data: [
+                    {
+                        value: "143860"
+                    },
+                    {
+                        value: "79427"
+                    },
+                    {
+                        value: "226052"
+                    },
+                    {
+                        value: "78655"
+                    }
+                ]
+            }
+        ]
+    };
+
+    FusionCharts.ready(function () {
+        var myChart = new FusionCharts({
+            type: "mscombi2d",
+            renderAt: "chart-container",
+            width: "100%",
+            height: "100%",
+            dataFormat: "json",
+            dataSource
+        }).render();
+    });
+</script>
