@@ -36,69 +36,11 @@ namespace DotNetCharts.Controllers
 
         public ActionResult DonutChart()
         {
-            // This page demonstrates the ease of generating charts using FusionCharts.
-            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
-            // Ideally, you would NOT use a physical data file. Instead you'll have
-            // your own ASP.NET scripts virtually relay the XML data document.
-            // FusionCharts supports various data format, please comment the code for
-            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
-            // For a head-start, we've kept this example very simple.
-
-            // Create the chart - doughnut3d Chart with data from Data/Data.xml
-            Chart sales = new Chart();
-
-            // Setting chart id
-            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
-
-            // Setting chart type to doughnut3d chart
-            sales.SetChartParameter(Chart.ChartParameter.chartType, "doughnut3d");
-
-            // Setting chart width to 600px
-            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
-
-            // Setting chart height to 350px
-            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
-
-            // Setting chart data as JSON String (Uncomment below line
-            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Top 5 countries with Global Oil Reserves\",\n    \"subcaption\": \"MMbbl= One Million barrels\",\n    \"enablesmartlabels\": \"1\",\n    \"showlabels\": \"1\",\n    \"numbersuffix\": \" MMbbl\",\n    \"usedataplotcolorforlabels\": \"1\",\n    \"plottooltext\": \"$label, <b>$value</b> MMbbl\",\n    \"theme\": \"fusion\"\n  },\n  \"data\": [\n    {\n      \"label\": \"Venezuela\",\n      \"value\": \"290\"\n    },\n    {\n      \"label\": \"Saudi\",\n      \"value\": \"260\"\n    },\n    {\n      \"label\": \"Canada\",\n      \"value\": \"180\"\n    },\n    {\n      \"label\": \"Iran\",\n      \"value\": \"140\"\n    },\n    {\n      \"label\": \"Russia\",\n      \"value\": \"115\"\n    }\n  ]\n}", Chart.DataFormat.json);
-
-            ViewData["Chart"] = sales.Render();
-
-            //Return the view
             return View();
         }
 
         public ActionResult StackedChart()
         {
-            // This page demonstrates the ease of generating charts using FusionCharts.
-            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
-            // Ideally, you would NOT use a physical data file. Instead you'll have
-            // your own ASP.NET scripts virtually relay the XML data document.
-            // FusionCharts supports various data format, please comment the code for
-            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
-            // For a head-start, we've kept this example very simple.
-
-            // Create the chart - stackedcolumn2d Chart with data from Data/Data.xml
-            Chart sales = new Chart();
-
-            // Setting chart id
-            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
-
-            // Setting chart type to stackedcolumn2d chart
-            sales.SetChartParameter(Chart.ChartParameter.chartType, "stackedcolumn2d");
-
-            // Setting chart width to 600px
-            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
-
-            // Setting chart height to 350px
-            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
-
-            // Setting chart data as JSON String (Uncomment below line
-            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Yearly Energy Production Rate\",\n    \"subcaption\": \" Top 5 Developed Countries\",\n    \"numbersuffix\": \" TWh\",\n    \"showsum\": \"1\",\n    \"plottooltext\": \"$label produces <b>$dataValue</b> of energy from $seriesName\",\n    \"theme\": \"fusion\",\n    \"drawcrossline\": \"1\"\n  },\n  \"categories\": [\n    {\n      \"category\": [\n        {\n          \"label\": \"Canada\"\n        },\n        {\n          \"label\": \"China\"\n        },\n        {\n          \"label\": \"Russia\"\n        },\n        {\n          \"label\": \"Australia\"\n        },\n        {\n          \"label\": \"United States\"\n        },\n        {\n          \"label\": \"France\"\n        }\n      ]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"seriesname\": \"Coal\",\n      \"data\": [\n        {\n          \"value\": \"400\"\n        },\n        {\n          \"value\": \"830\"\n        },\n        {\n          \"value\": \"500\"\n        },\n        {\n          \"value\": \"420\"\n        },\n        {\n          \"value\": \"790\"\n        },\n        {\n          \"value\": \"380\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Hydro\",\n      \"data\": [\n        {\n          \"value\": \"350\"\n        },\n        {\n          \"value\": \"620\"\n        },\n        {\n          \"value\": \"410\"\n        },\n        {\n          \"value\": \"370\"\n        },\n        {\n          \"value\": \"720\"\n        },\n        {\n          \"value\": \"310\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Nuclear\",\n      \"data\": [\n        {\n          \"value\": \"210\"\n        },\n        {\n          \"value\": \"400\"\n        },\n        {\n          \"value\": \"450\"\n        },\n        {\n          \"value\": \"180\"\n        },\n        {\n          \"value\": \"570\"\n        },\n        {\n          \"value\": \"270\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Gas\",\n      \"data\": [\n        {\n          \"value\": \"180\"\n        },\n        {\n          \"value\": \"330\"\n        },\n        {\n          \"value\": \"230\"\n        },\n        {\n          \"value\": \"160\"\n        },\n        {\n          \"value\": \"440\"\n        },\n        {\n          \"value\": \"350\"\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Oil\",\n      \"data\": [\n        {\n          \"value\": \"60\"\n        },\n        {\n          \"value\": \"200\"\n        },\n        {\n          \"value\": \"200\"\n        },\n        {\n          \"value\": \"50\"\n        },\n        {\n          \"value\": \"230\"\n        },\n        {\n          \"value\": \"150\"\n        }\n      ]\n    }\n  ]\n}", Chart.DataFormat.json);
-
-            ViewData["Chart"] = sales.Render();
-
-            //Return the view
             return View();
         }
 
