@@ -3,15 +3,111 @@
     Layout = "~/Views/Shared/_FusionChartLayout.cshtml";
 }
 
-<div  class="row pt-3 px-4">
+<div class="row pt-3 px-4">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
                 Simple MarketShare Chart
             </div>
             <div class="card-body">
-                <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+                <div id="chart-container" style="height:500px"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const dataSource = {
+        chart: {
+            caption: "Browser Install Statistics",
+            yaxisname: "Global Installs",
+            stack100percent: "0",
+            theme: "fusion",
+            yaxismaxvalue: "210000000",
+            decimals: "1",
+            drawcrossline: "0"
+        },
+        categories: [
+            {
+                category: [
+                    {
+                        label: "Chrome"
+                    },
+                    {
+                        label: "Mozilla"
+                    },
+                    {
+                        label: "IE"
+                    },
+                    {
+                        label: "Safari"
+                    }
+                ]
+            }
+        ],
+        dataset: [
+            {
+                seriesname: "USA",
+                data: [
+                    {
+                        value: 61600000
+                    },
+                    {
+                        value: 39800000
+                    },
+                    {
+                        value: 16000000
+                    },
+                    {
+                        value: 8000000
+                    }
+                ]
+            },
+            {
+                seriesname: "Europe",
+                data: [
+                    {
+                        value: 63000000
+                    },
+                    {
+                        value: 43800000
+                    },
+                    {
+                        value: 17000000
+                    },
+                    {
+                        value: 8380000
+                    }
+                ]
+            },
+            {
+                seriesname: "Rest of the world",
+                data: [
+                    {
+                        value: 62000000
+                    },
+                    {
+                        value: 48593000
+                    },
+                    {
+                        value: 18000000
+                    },
+                    {
+                        value: 5576900
+                    }
+                ]
+            }
+        ]
+    };
+
+    FusionCharts.ready(function () {
+        var myChart = new FusionCharts({
+            type: "marimekko",
+            renderAt: "chart-container",
+            width: "100%",
+            height: "100%",
+            dataFormat: "json",
+            dataSource
+        }).render();
+    });
+</script>
