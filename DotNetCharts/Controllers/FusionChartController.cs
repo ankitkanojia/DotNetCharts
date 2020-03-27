@@ -56,35 +56,6 @@ namespace DotNetCharts.Controllers
 
         public ActionResult MarketShareChart()
         {
-            // This page demonstrates the ease of generating charts using FusionCharts.
-            // For this chart, we've used a pre-defined Data.xml (contained in /Data/ folder)
-            // Ideally, you would NOT use a physical data file. Instead you'll have
-            // your own ASP.NET scripts virtually relay the XML data document.
-            // FusionCharts supports various data format, please comment the code for
-            // current data format (Chart.DataFormat.xmlurl) and uncomment the required format to view respective examples.
-            // For a head-start, we've kept this example very simple.
-
-            // Create the chart - marimekko Chart with data from Data/Data.xml
-            Chart sales = new Chart();
-
-            // Setting chart id
-            sales.SetChartParameter(Chart.ChartParameter.chartId, "myChart");
-
-            // Setting chart type to marimekko chart
-            sales.SetChartParameter(Chart.ChartParameter.chartType, "marimekko");
-
-            // Setting chart width to 600px
-            sales.SetChartParameter(Chart.ChartParameter.chartWidth, "600");
-
-            // Setting chart height to 350px
-            sales.SetChartParameter(Chart.ChartParameter.chartHeight, "350");
-
-            // Setting chart data as JSON String (Uncomment below line
-            sales.SetData("{\n  \"chart\": {\n    \"caption\": \"Browser Install Statistics\",\n    \"yaxisname\": \"Global Installs\",\n    \"stack100percent\": \"0\",\n    \"theme\": \"fusion\",\n    \"yaxismaxvalue\": \"210000000\",\n    \"decimals\": \"1\",\n    \"drawcrossline\": \"0\"\n  },\n  \"categories\": [\n    {\n      \"category\": [\n        {\n          \"label\": \"Chrome\"\n        },\n        {\n          \"label\": \"Mozilla\"\n        },\n        {\n          \"label\": \"IE\"\n        },\n        {\n          \"label\": \"Safari\"\n        }\n      ]\n    }\n  ],\n  \"dataset\": [\n    {\n      \"seriesname\": \"USA\",\n      \"data\": [\n        {\n          \"value\": 61600000\n        },\n        {\n          \"value\": 39800000\n        },\n        {\n          \"value\": 16000000\n        },\n        {\n          \"value\": 8000000\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Europe\",\n      \"data\": [\n        {\n          \"value\": 63000000\n        },\n        {\n          \"value\": 43800000\n        },\n        {\n          \"value\": 17000000\n        },\n        {\n          \"value\": 8380000\n        }\n      ]\n    },\n    {\n      \"seriesname\": \"Rest of the world\",\n      \"data\": [\n        {\n          \"value\": 62000000\n        },\n        {\n          \"value\": 48593000\n        },\n        {\n          \"value\": 18000000\n        },\n        {\n          \"value\": 5576900\n        }\n      ]\n    }\n  ]\n}", Chart.DataFormat.json);
-
-            ViewData["Chart"] = sales.Render();
-
-            //Return the view
             return View();
         }
 
