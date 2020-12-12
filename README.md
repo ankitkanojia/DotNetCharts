@@ -10,6 +10,7 @@ A chart is a graphical representation of data, in which "the data is represented
 - HighChart
 - d3Chart
 - Chart.js
+- Morris.js
 
 <p align="center"><img width="80%" src="https://raw.githubusercontent.com/ankitkanojia/DotNetCharts/development/Warning.png" alt="Warning Note" /></p>
 
